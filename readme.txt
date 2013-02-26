@@ -1,14 +1,14 @@
 === Plugin Name ===
 Contributors: timwhitlock
 Donate link: http://timwhitlock.info
-Tags: twitter, tweets, oauth, api, rest
+Tags: twitter, tweets, oauth, api, rest, api, widget
 Requires at least: 3.5.1
 Tested up to: 3.5.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides a widget showing latest tweets - compatible with the new Twitter API 1.1
+Latest Tweets widget, compatible with the new Twitter API 1.1
 
 == Description ==
 
@@ -42,3 +42,9 @@ Once your site is authenticated you can configure the widget as follows:
 = 1.0 =
 * First public release
 
+= 1.0.1 =
+* Added banner jpeg
+
+== Credits ==
+
+Screenshot taken with permission from http://stayingalivefoundation.org/blog

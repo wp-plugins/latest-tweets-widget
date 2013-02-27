@@ -12,8 +12,10 @@ Latest Tweets widget, compatible with the new Twitter API 1.1
 
 == Description ==
 
-Connect your Twitter account to this plugin and the widget will display your latest tweets on your site.  
+Connect your Twitter account to this plugin and the widget will display your latest tweets on your site.
+
 This plugin is compatible with the new Twitter API 1.1 and provides full authentication via the Wordpress admin area.
+
 
 Built by [timwhitlock](https://twitter.com/timwhitlock)
 
@@ -49,4 +51,4 @@ Screenshot taken with permission from http://stayingalivefoundation.org/blog
 
 == Notes ==
 
-Please be aware of [Twitter's display requirements](https://dev.twitter.com/terms/display-requirements) when rendering tweets
+Be aware of [Twitter's display requirements](https://dev.twitter.com/terms/display-requirements) when rendering tweets on your website.

@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: timwhitlock
-Donate link: http://timwhitlock.info
+Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget
 Requires at least: 3.5.1
 Tested up to: 3.5.1

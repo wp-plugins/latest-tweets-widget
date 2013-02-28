@@ -115,7 +115,7 @@ If you want to override the default markup of the tweets, the following filters 
 * Override the unordered list for tweets with `latest_tweets_render_list` 
 * Add a footer before the end of the widget with `latest_tweets_render_after`
 
-Here's an **example** of using some of the above in tour theme's functions.php file:
+Here's an **example** of using some of the above in your theme's functions.php file:
 
     add_filter('latest_tweets_render_date', function( $created_at ){
         $date = DateTime::createFromFormat('D M d H:i:s O Y', $created_at );

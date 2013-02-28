@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ Once you've populated the first two fields, just click the *Connect* button and 
 
 
 == Changelog ==
+
+= 1.0.4 =
+* Library update fixes dates for old PHP versions 
 
 = 1.0.3 =
 * Added theme filters

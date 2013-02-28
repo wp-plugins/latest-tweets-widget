@@ -4,20 +4,22 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: trunk
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Latest Tweets widget, compatible with the new Twitter API 1.1
+Latest Tweets widget compatible with the new Twitter API 1.1
 
 == Description ==
 
 Connect your Twitter account to this plugin and the widget will display your latest tweets on your site.
 
-This plugin is compatible with the new Twitter API 1.1 and provides full authentication via the Wordpress admin area.
-
+This plugin is compatible with the new **Twitter API 1.1** and provides full **OAuth** authentication via the Wordpress admin area.
+ 
 
 Built by [timwhitlock](https://twitter.com/timwhitlock)
+
+The underlying Twitter API library is [available on Github](https://github.com/timwhitlock/wp-twitter-api)
 
 
 == Installation ==
@@ -38,6 +40,21 @@ Once your site is authenticated you can configure the widget as follows:
 8. Log into Wordpress admin and go to Appearance > Widgets
 9. Drag 'Latest Tweets' from 'Available widgets' to where you want it. e.g. Main Sidebar
 10. Optionally configure the widget title and number of tweets to display.
+
+== Frequently Asked Questions ==
+
+= How can I style the widget? =
+
+Currently just by using the CSS class names included in the markup. Newer versions will have more template and styling support.
+
+= How I do know what my OAuth settings are? =
+
+These details are available in the [Twitter dashboard](https://dev.twitter.com/apps)
+
+= What do I put in the third and fourth fields? =
+
+Once you've populated the first two fields, just click the *Connect* button and follow the prompts.
+
 
 
 == Changelog ==

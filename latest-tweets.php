@@ -184,4 +184,14 @@ add_action( 'widgets_init', 'latest_tweets_register_widget' );
 
 if( is_admin() ){
     require_once dirname(__FILE__).'/lib/twitter-api.php';
+    
+    // extra visibility of API settings link
+    function latest_tweets_plugin_row_meta( $links, $file ){
+        if( false !== strpos($file,'/latest-tweets.php') ){
+            $links[] = '<a href="options-general.php?page=twitter-api-admin"><strong>Connect</strong></a>';
+        } 
+        return $links;
+    }
+    add_action('plugin_row_meta', 'latest_tweets_plugin_row_meta', 10, 2 );
 }
+

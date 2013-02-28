@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,7 +45,7 @@ Once your site is authenticated you can configure the widget as follows:
 
 = How can I style the widget? =
 
-Currently just by using the CSS class names included in the markup. Newer versions will have more template and styling support.
+See the 'Other Notes' tab for theming information.
 
 = How I do know what my OAuth settings are? =
 
@@ -59,11 +59,81 @@ Once you've populated the first two fields, just click the *Connect* button and 
 
 == Changelog ==
 
-= 1.0.1 =
-* First public release
+= 1.0.3 =
+* Added theme filters
+* Added configs for showing replies and RTs
 
 = 1.0.2 =
 * Fixed hook for PHP < 5.3
+
+= 1.0.1 =
+* First public release
+
+== Theming ==
+
+For starters you can alter some of the HTML using built-in WordPress features.  
+See [Widget Filters](http://codex.wordpress.org/Plugin_API/Filter_Reference#Widgets)
+and [Widgetizing Themes](http://codex.wordpress.org/Widgetizing_Themes)
+
+**CSS**
+
+This plugin contains no default CSS. That's deliberate, so you can style it how you want.
+
+Tweets are rendered as a list which has various hooks you can use. Here's a rough template:
+
+    .latest-tweets {
+        /* style tweet list wrapper */
+    }
+    .latest-tweets h3 {
+        /* style whatever you did with the header */
+    }
+    .latest-tweets ul { 
+        /* style tweet list*/
+    }
+    .latest-tweets li {
+       /* style tweet item */
+    }
+    .latest-tweets .tweet-text {
+       /* style main tweet text */
+    }
+    .latest-tweets .tweet-text a {
+       /* style links, hashtags and mentions */
+    }
+    .latest-tweets .tweet-details {
+      /* style datetime and link under tweet */
+    }
+
+
+**Custom HTML**
+
+If you want to override the default markup of the tweets, the following filters are also available:
+
+* Add a header between the widget title and the tweets with `latest_tweets_render_before`
+* Perform your own rendering of the timestamp with `latest_tweets_render_date`
+* Render plain tweet text to your own HTML with `latest_tweets_render_text`
+* Render each composite tweet with `latest_tweets_render_tweet`
+* Override the unordered list for tweets with `latest_tweets_render_list` 
+* Add a footer before the end of the widget with `latest_tweets_render_after`
+
+Here's an **example** of using some of the above in tour theme's functions.php file:
+
+    add_filter('latest_tweets_render_date', function( $created_at ){
+        $date = DateTime::createFromFormat('D M d H:i:s O Y', $created_at );
+        return $date->format('d M h:ia');
+    }, 10 , 1 );
+    
+    add_filter('latest_tweets_render_text', function( $text ){
+        return $text; // <- will use default
+    }, 10 , 1 );
+    
+    add_filter('latest_tweets_render_tweet', function( $html, $date, $link ){
+        return '<p class="my-tweet">'.$html.'</p><p class="my-date"><a href="'.$link.'">'.$date.'</a></p>';
+    }, 10, 3 );
+    
+    add_filter('latest_tweets_render_after', function(){
+        return '<footer><a href="https://twitter.com/me">More from me</a></footer>';
+    }, 10, 0 );
+
 
 == Credits ==
 
@@ -72,3 +142,4 @@ Screenshot taken with permission from http://stayingalivefoundation.org/blog
 == Notes ==
 
 Be aware of [Twitter's display requirements](https://dev.twitter.com/terms/display-requirements) when rendering tweets on your website.
+

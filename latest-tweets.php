@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.0.2
+Version: 1.0.3
 Author URI: http://timwhitlock.info/
 */
 
@@ -102,7 +102,7 @@ class Latest_Tweets_Widget extends WP_Widget {
     public function widget( array $args, $instance ) {
         $title = apply_filters('widget_title', $instance['title']);
         echo $args['before_widget'], '<div class="latest-tweets">';  
-        echo $args['before_title'], $instance['title'], $args['after_title'];
+        echo $args['before_title'], $title, $args['after_title'];
         echo '<ul class="latest-tweets">';
         foreach( latest_tweets_render( $instance['screen_name'], $instance['num'] ) as $tweet ){
             echo '<li class="latest-tweet">',$tweet,'</li>';

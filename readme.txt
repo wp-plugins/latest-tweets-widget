@@ -55,6 +55,11 @@ These details are available in the [Twitter dashboard](https://dev.twitter.com/a
 
 Once you've populated the first two fields, just click the *Connect* button and follow the prompts.
 
+= I get SSL certificate errors =
+
+You can disable SSL verification of twitter.com by adding this to your theme functions.php:  
+`add_filter('https_ssl_verify', '__return_false');`  
+Do so at your own risk.
 
 
 == Changelog ==

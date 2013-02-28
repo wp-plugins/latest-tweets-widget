@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: timwhitlock
 Donate link: http://timwhitlock.info/donate-to-a-project/
-Tags: twitter, tweets, oauth, api, rest, api, widget
+Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
 Stable tag: trunk
@@ -44,6 +44,9 @@ Once your site is authenticated you can configure the widget as follows:
 
 = 1.0.1 =
 * First public release
+
+= 1.0.2 =
+* Fixed hook for PHP < 5.3
 
 == Credits ==
 

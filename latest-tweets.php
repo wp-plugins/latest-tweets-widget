@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Latest Tweets
-Plugin URI: https://github.com/timwhitlock/wp-twitter-api
+Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1
+Version: 1.0.2
 Author URI: http://timwhitlock.info/
 */
 
@@ -115,7 +115,11 @@ class Latest_Tweets_Widget extends WP_Widget {
  
 
 
-add_action( 'widgets_init',  function(){ return register_widget('Latest_Tweets_Widget'); } );
+function latest_tweets_register_widget(){
+    return register_widget('Latest_Tweets_Widget');
+}
+
+add_action( 'widgets_init', 'latest_tweets_register_widget' );
 
 
 if( is_admin() ){

@@ -1,6 +1,7 @@
 <?php
 /**
- * Twitter API, built from: https://github.com/timwhitlock/wp-twitter-api
+ * Twitter API Wordpress library.
+ * @author Tim Whitlock <@timwhitlock>
  */
 
 

@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://timwhitlock.info/
 */
 
@@ -23,10 +23,8 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
         if( ! function_exists('twitter_api_get') ){
             require_once dirname(__FILE__).'/lib/twitter-api.php';
         }
-        if( function_exists('apc_fetch') ){
-            // We could cache the rendered HTML right here, but this keeps caching abstracted in library
-            twitter_api_enable_cache( 300 );
-        }
+        // We could cache the rendered HTML right here, but this keeps caching abstracted in library
+        twitter_api_enable_cache( 300 );
         // Build API params for "statuses/user_timeline" // https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
         $trim_user = true;
         $include_rts = ! empty($rts);

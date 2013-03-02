@@ -78,7 +78,7 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
  
   
 /**
- * Example latest tweets widget class
+ * latest tweets widget class
  */
 class Latest_Tweets_Widget extends WP_Widget {
     
@@ -162,8 +162,8 @@ class Latest_Tweets_Widget extends WP_Widget {
         // output widget applying filters to each element
         echo 
         $args['before_widget'], 
+            $title,
             '<div class="latest-tweets">', 
-                $title,
                 apply_filters( 'latest_tweets_render_before', '' ),
                 $list,
                 apply_filters( 'latest_tweets_render_after', '' ),

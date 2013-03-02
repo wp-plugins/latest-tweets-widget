@@ -64,6 +64,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.5 =
+* moved widget title outside latest-tweets wrapper
+
 = 1.0.4 =
 * Library update fixes dates for old PHP versions 
 

@@ -21,6 +21,8 @@ Built by [timwhitlock](https://twitter.com/timwhitlock)
 
 The underlying Twitter API library is [available on Github](https://github.com/timwhitlock/wp-twitter-api)
 
+See also [Latest Vines](http://wordpress.org/extend/plugins/latest-vines-widget/)
+
 
 == Installation ==
 

@@ -17,7 +17,7 @@ Connect your Twitter account to this plugin and the widget will display your lat
 This plugin is compatible with the new **Twitter API 1.1** and provides full **OAuth** authentication via the Wordpress admin area.
  
 
-Built by [timwhitlock](https://twitter.com/timwhitlock)
+Built by <a href="//twitter.com/timwhitlock">@timwhitlock</a> / <a rel="author" href="https://plus.google.com/106703751121449519322">Tim Whitlock</a>
 
 The underlying Twitter API library is [available on Github](https://github.com/timwhitlock/wp-twitter-api)
 

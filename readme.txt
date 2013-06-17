@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ Do so at your own risk.
 
 
 == Changelog ==
+
+= 1.0.7 =
+* Allow library coexist across plugins
 
 = 1.0.6 =
 * Enabled translations and added pt_BR

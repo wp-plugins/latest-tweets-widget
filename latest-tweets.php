@@ -84,6 +84,10 @@ class Latest_Tweets_Widget extends WP_Widget {
     
     /** @see WP_Widget::__construct */
     public function __construct( $id_base = false, $name = 'Latest Tweets', $widget_options = array(), $control_options = array() ){
+        if( ! function_exists('_twitter_api_init_l10n') ){
+            require_once dirname(__FILE__).'/lib/twitter-api.php';
+        }
+        _twitter_api_init_l10n();
         $this->options = array(
             array (
                 'name'  => 'title',

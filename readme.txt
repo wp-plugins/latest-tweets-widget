@@ -95,6 +95,12 @@ Do so at your own risk.
 = 1.0.1 =
 * First public release
 
+== Upgrade Notice ==
+
+= 1.0.7 =
+* Various bugfixes and improvements
+
+
 == Theming ==
 
 For starters you can alter some of the HTML using built-in WordPress features.  

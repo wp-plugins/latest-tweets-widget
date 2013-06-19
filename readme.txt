@@ -68,10 +68,17 @@ You can disable SSL verification of twitter.com by adding this to your theme fun
 `add_filter('https_ssl_verify', '__return_false');`  
 Do so at your own risk.
 
+== Screenshots ==
+
+1. Widget screen shows feed options
+2. Admin screen shows Twitter connect button and OAuth settings
 
 == Changelog ==
 
-= 1.0.7 =
+= 1.0.8 (dev) =
+* Added `latest_tweets_cache_seconds` filter
+
+= 1.0.7 (stable) =
 * Allow library coexist across plugins
 
 = 1.0.6 =
@@ -165,6 +172,27 @@ Here's an **example** of using some of the above in your theme's functions.php f
     add_filter('latest_tweets_render_after', function(){
         return '<footer><a href="https://twitter.com/me">More from me</a></footer>';
     }, 10, 0 );
+
+== Caching ==
+
+Responses from the Twitter API are cached for 5 minutes by default. This means your new Tweets will not appear on your site in real time.
+
+This is deliberate not only for performance, but also to avoid Twitter's strict rate limits of 15 requests every 15 minutes. 
+
+You can override the 300 second cache by using the `latest_tweets_cache_seconds` filter in your theme as follows:
+
+This would extend the cache to 1 minute, which is the lowest value you should consider using on a live site:
+
+    add_filter('latest_tweets_cache_seconds', function( $ttl ){
+        return 60;
+    }, 10, 1 );
+
+This would disable the cache (not recommended other than for debugging):
+
+    add_filter('latest_tweets_cache_seconds', function( $ttl ){
+        return 0;
+    }, 10, 1 );
+
 
 
 == Credits ==

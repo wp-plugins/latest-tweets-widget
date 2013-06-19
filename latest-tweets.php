@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.0.6
+Version: 1.0.8
 Author URI: http://timwhitlock.info/
 */
 
@@ -25,7 +25,8 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             _twitter_api_init_l10n();
         }
         // We could cache the rendered HTML right here, but this keeps caching abstracted in library
-        twitter_api_enable_cache( 300 );
+        $ttl = (int) apply_filters('latest_tweets_cache_seconds', 300 ) and
+        twitter_api_enable_cache( $ttl );
         // Build API params for "statuses/user_timeline" // https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
         $trim_user = true;
         $include_rts = ! empty($rts);
@@ -83,6 +84,10 @@ class Latest_Tweets_Widget extends WP_Widget {
     
     /** @see WP_Widget::__construct */
     public function __construct( $id_base = false, $name = 'Latest Tweets', $widget_options = array(), $control_options = array() ){
+        if( ! function_exists('_twitter_api_init_l10n') ){
+            require_once dirname(__FILE__).'/lib/twitter-api.php';
+        }
+        _twitter_api_init_l10n();
         $this->options = array(
             array (
                 'name'  => 'title',
@@ -182,8 +187,9 @@ add_action( 'widgets_init', 'latest_tweets_register_widget' );
 
 
 if( is_admin() ){
-    require_once dirname(__FILE__).'/lib/twitter-api.php';
-    
+    if( ! function_exists('twitter_api_get') ){
+        require_once dirname(__FILE__).'/lib/twitter-api.php';
+    }
     // extra visibility of API settings link
     function latest_tweets_plugin_row_meta( $links, $file ){
         if( false !== strpos($file,'/latest-tweets.php') ){

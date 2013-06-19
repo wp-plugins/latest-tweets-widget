@@ -77,6 +77,7 @@ Do so at your own risk.
 
 = 1.0.8 (dev) =
 * Added `latest_tweets_cache_seconds` filter
+* Added German translations
 
 = 1.0.7 (stable) =
 * Allow library coexist across plugins

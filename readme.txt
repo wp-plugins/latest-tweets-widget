@@ -75,6 +75,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.9 =
+* Fixed pluralisation bug in date printing
+
 = 1.0.8 =
 * Added `latest_tweets_cache_seconds` filter
 * Added German translations

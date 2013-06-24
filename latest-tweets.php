@@ -56,7 +56,12 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             // render and linkify tweet, unless theme overrides with filter
             $html = apply_filters('latest_tweets_render_text', $text );
             if( $html === $text ){
-                function_exists('twitter_api_html') or twitter_api_include('utils');
+                if( ! function_exists('twitter_api_html') ){
+                    twitter_api_include('utils');
+                }
+                if( ! empty($entities['urls']) || ! empty($entities['media']) ){
+                    $text = twitter_api_expand_urls( $text, $entities );
+                }
                 $html = twitter_api_html( $text );
             }
             // piece together the whole tweet, allowing overide

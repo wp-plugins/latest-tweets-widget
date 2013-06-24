@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,7 @@ Do so at your own risk.
 
 = 1.0.9 =
 * Fixed pluralisation bug in date printing
+* Now expanding t.co links unless render_text filter is used
 
 = 1.0.8 =
 * Added `latest_tweets_cache_seconds` filter

@@ -80,6 +80,24 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
 } 
 
 
+
+/**
+ * Render tweets as HTML anywhere
+ */
+function latest_tweets_render_html( $screen_name = '', $num = 5, $rts = true, $ats = true ){
+    $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
+    $list  = apply_filters('latest_tweets_render_list', $items );
+    if( is_array($list) ){
+        $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';
+    }
+    return 
+        '<div class="latest-tweets">'. 
+            apply_filters( 'latest_tweets_render_before', '' ).
+            $list.
+            apply_filters( 'latest_tweets_render_after', '' ).
+        '</div>';
+}
+
  
   
 /**
@@ -189,6 +207,17 @@ function latest_tweets_register_widget(){
 }
 
 add_action( 'widgets_init', 'latest_tweets_register_widget' );
+
+
+
+function lastest_tweets_shortcode( $atts ){
+    $screen_name = isset($atts['user']) ? trim($atts['user'],' @') : '';
+    $num = isset($atts['max']) ? (int) $atts['max'] : 5;
+    return latest_tweets_render_html( $screen_name, $num, true, false );
+}
+
+add_shortcode( 'tweets', 'lastest_tweets_shortcode' );
+
 
 
 if( is_admin() ){

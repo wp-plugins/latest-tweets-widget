@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.0.6
+Version: 1.0.10
 Author URI: http://timwhitlock.info/
 */
 
@@ -25,7 +25,8 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             _twitter_api_init_l10n();
         }
         // We could cache the rendered HTML right here, but this keeps caching abstracted in library
-        twitter_api_enable_cache( 300 );
+        $ttl = (int) apply_filters('latest_tweets_cache_seconds', 300 ) and
+        twitter_api_enable_cache( $ttl );
         // Build API params for "statuses/user_timeline" // https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
         $trim_user = true;
         $include_rts = ! empty($rts);
@@ -55,7 +56,12 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             // render and linkify tweet, unless theme overrides with filter
             $html = apply_filters('latest_tweets_render_text', $text );
             if( $html === $text ){
-                function_exists('twitter_api_html') or twitter_api_include('utils');
+                if( ! function_exists('twitter_api_html') ){
+                    twitter_api_include('utils');
+                }
+                if( ! empty($entities['urls']) || ! empty($entities['media']) ){
+                    $text = twitter_api_expand_urls( $text, $entities );
+                }
                 $html = twitter_api_html( $text );
             }
             // piece together the whole tweet, allowing overide
@@ -74,6 +80,24 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
 } 
 
 
+
+/**
+ * Render tweets as HTML anywhere
+ */
+function latest_tweets_render_html( $screen_name = '', $num = 5, $rts = true, $ats = true ){
+    $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
+    $list  = apply_filters('latest_tweets_render_list', $items );
+    if( is_array($list) ){
+        $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';
+    }
+    return 
+        '<div class="latest-tweets">'. 
+            apply_filters( 'latest_tweets_render_before', '' ).
+            $list.
+            apply_filters( 'latest_tweets_render_after', '' ).
+        '</div>';
+}
+
  
   
 /**
@@ -83,6 +107,10 @@ class Latest_Tweets_Widget extends WP_Widget {
     
     /** @see WP_Widget::__construct */
     public function __construct( $id_base = false, $name = 'Latest Tweets', $widget_options = array(), $control_options = array() ){
+        if( ! function_exists('_twitter_api_init_l10n') ){
+            require_once dirname(__FILE__).'/lib/twitter-api.php';
+        }
+        _twitter_api_init_l10n();
         $this->options = array(
             array (
                 'name'  => 'title',
@@ -181,9 +209,21 @@ function latest_tweets_register_widget(){
 add_action( 'widgets_init', 'latest_tweets_register_widget' );
 
 
+
+function lastest_tweets_shortcode( $atts ){
+    $screen_name = isset($atts['user']) ? trim($atts['user'],' @') : '';
+    $num = isset($atts['max']) ? (int) $atts['max'] : 5;
+    return latest_tweets_render_html( $screen_name, $num, true, false );
+}
+
+add_shortcode( 'tweets', 'lastest_tweets_shortcode' );
+
+
+
 if( is_admin() ){
-    require_once dirname(__FILE__).'/lib/twitter-api.php';
-    
+    if( ! function_exists('twitter_api_get') ){
+        require_once dirname(__FILE__).'/lib/twitter-api.php';
+    }
     // extra visibility of API settings link
     function latest_tweets_plugin_row_meta( $links, $file ){
         if( false !== strpos($file,'/latest-tweets.php') ){

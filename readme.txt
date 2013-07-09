@@ -77,6 +77,7 @@ Do so at your own risk.
 
 = 1.0.10 =
 * Added shortcode support
+* Fixed bug rendering url fragments as hashtags
 
 = 1.0.9 =
 * Fixed pluralisation bug in date printing

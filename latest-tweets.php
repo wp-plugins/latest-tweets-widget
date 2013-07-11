@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.0.10
+Version: 1.0.11
 Author URI: http://timwhitlock.info/
 */
 
@@ -24,22 +24,55 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             require_once dirname(__FILE__).'/lib/twitter-api.php';
             _twitter_api_init_l10n();
         }
-        // We could cache the rendered HTML right here, but this keeps caching abstracted in library
-        $ttl = (int) apply_filters('latest_tweets_cache_seconds', 300 ) and
-        twitter_api_enable_cache( $ttl );
+        twitter_api_include('core');
+        // caching full data set, not just twitter api caching
+        $cachettl = (int) apply_filters('latest_tweets_cache_seconds', 300 );
+        if( $cachettl ){
+            $cachekey = 'latest_tweets_'.implode('_', func_get_args() );
+            $rendered = _twitter_api_cache_get( $cachekey );
+            if( $rendered ){
+                return $rendered;
+            }
+        }
         // Build API params for "statuses/user_timeline" // https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
         $trim_user = true;
         $include_rts = ! empty($rts);
         $exclude_replies = empty($ats);
-        $params = compact('count','exclude_replies','include_rts','trim_user','screen_name');
+        $params = compact('exclude_replies','include_rts','trim_user','screen_name');
+        // Stripping tweets means we may get less than $count tweets.
+        // we'll keep going until we get the amount we need, but may as well get more each time.
         if( $exclude_replies || ! $include_rts ){
-            // Stripping tweets means we may get less than $count tweets.
-            // there is no good way around this other than fetch extra and hope for the best
-            $params['count'] *= 3;
+            $params['count'] = $count * 3;
         }
-        $tweets = twitter_api_get('statuses/user_timeline', $params );
-        if( isset($tweets[$count]) ){
-            $tweets = array_slice( $tweets, 0, $count );
+        // else ensure we always get more than one to avoid infinite loop on max_id bug
+        else {
+            $params['count'] = max( 2, $count );
+        }
+        // pull tweets until we either have enough, or there are no more
+        $tweets = array();
+        while( $batch = twitter_api_get('statuses/user_timeline', $params ) ){
+            $max_id = null;
+            foreach( $batch as $tweet ){
+                if( isset($params['max_id']) && $tweet['id_str'] === $params['max_id'] ){
+                    // previous max included in results, even though docs say it won't be
+                    continue;
+                }
+                $max_id = $tweet['id_str'];
+                if( ! $include_rts && preg_match('/^(?:RT|MT)[ :\-]*@/i', $tweet['text']) ){
+                    // skipping manual RT
+                    continue;
+                }
+                $tweets[] = $tweet;
+            }
+            if( isset($tweets[$count]) ){
+                $tweets = array_slice( $tweets, 0, $count );
+                break;
+            }
+            if( ! $max_id ){
+                // infinite loop would occur if user had only tweeted once, ever.
+                break;
+            }
+            $params['max_id'] = $max_id;
         }
         // render each tweet as a blocks of html for the widget list items
         $rendered = array();
@@ -71,6 +104,10 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                          '<p class="tweet-details"><a href="'.$link.'" target="_blank">'.$date.'</a></p>';
             }
             $rendered[] = $final;
+        }
+        // cache rendered tweets
+        if( $cachettl ){
+            _twitter_api_cache_set( $cachekey, $rendered, $cachettl );
         }
         return $rendered;
     }

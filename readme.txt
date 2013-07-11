@@ -75,6 +75,11 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.11 =
+* Better fulfillment of tweet count when skipping retwteets and replies
+* Manual RTs now excluded when "Show Retweets" is disabled
+* Caching applies to rendered tweets instead of raw API data
+
 = 1.0.10 =
 * Added shortcode support
 * Fixed bug rendering url fragments as hashtags

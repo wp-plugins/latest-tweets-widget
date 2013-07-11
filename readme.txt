@@ -21,7 +21,7 @@ Built by <a href="//twitter.com/timwhitlock">@timwhitlock</a> / <a rel="author" 
 
 The underlying Twitter API library is [available on Github](https://github.com/timwhitlock/wp-twitter-api)
 
-See also [Latest Vines](http://wordpress.org/extend/plugins/latest-vines-widget/)
+Also by this author: [Open Source Emoji](http://wordpress.org/support/plugin/open-source-emoji)
 
 
 == Installation ==

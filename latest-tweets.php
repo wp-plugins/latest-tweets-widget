@@ -24,13 +24,14 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             require_once dirname(__FILE__).'/lib/twitter-api.php';
             _twitter_api_init_l10n();
         }
-        twitter_api_include('core');
         // caching full data set, not just twitter api caching
         $cachettl = (int) apply_filters('latest_tweets_cache_seconds', 300 );
         if( $cachettl ){
             $cachekey = 'latest_tweets_'.implode('_', func_get_args() );
-            $rendered = _twitter_api_cache_get( $cachekey );
-            if( $rendered ){
+            if( ! function_exists('_twitter_api_cache_get') ){
+                twitter_api_include('core');
+            }
+            if( $rendered = _twitter_api_cache_get($cachekey) ){
                 return $rendered;
             }
         }

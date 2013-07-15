@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,7 @@ Do so at your own risk.
 * Better fulfillment of tweet count when skipping retwteets and replies
 * Manual RTs now excluded when "Show Retweets" is disabled
 * Caching applies to rendered tweets instead of raw API data
+* Updated some German translations
 
 = 1.0.10 =
 * Added shortcode support
@@ -118,7 +119,7 @@ Do so at your own risk.
 
 == Upgrade Notice ==
 
-= 1.0.10 =
+= 1.0.11 =
 * Important bug fixes, upgrade highly recommended
 
 

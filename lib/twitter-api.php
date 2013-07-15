@@ -56,7 +56,7 @@ function twitter_api_enable_cache( $ttl ){
  * Disable caching of Twitter API responses
  * @return TwitterApiClient
  */
-function twitter_api_disable_cache( $ttl ){
+function twitter_api_disable_cache(){
     $Client = twitter_api_client();
     return $Client->disable_cache();
 }
@@ -147,6 +147,7 @@ if( is_admin() ){
 function _twitter_api_init_l10n(){
     static $map = array (
         'pt_BR' => 'pt_BR',
+        'de_DE' => 'de_DE',
     );
     if( preg_match('/^([a-z]{2})[\-_\s]([a-z]{2})$/i', get_locale(), $r ) ){
         $locale = strtolower($r[1]).'_'.strtoupper($r[2]);

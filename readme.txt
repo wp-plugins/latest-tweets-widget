@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.12 =
+* Critical bug fix affecting some older versions of PHP
+
 = 1.0.11 =
 * Better fulfillment of tweet count when skipping retwteets and replies
 * Manual RTs now excluded when "Show Retweets" is disabled
@@ -118,6 +121,9 @@ Do so at your own risk.
 * First public release
 
 == Upgrade Notice ==
+
+= 1.0.12 =
+* Upgrade if you get a fatal error on line 30
 
 = 1.0.11 =
 * Important bug fixes, upgrade highly recommended

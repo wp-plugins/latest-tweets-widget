@@ -123,10 +123,7 @@ Do so at your own risk.
 == Upgrade Notice ==
 
 = 1.0.12 =
-* Upgrade if you get a fatal error on line 30
-
-= 1.0.11 =
-* Important bug fixes, upgrade highly recommended
+* Important bug fixes and improvements, upgrade recommended.
 
 
 == Shortcodes ==

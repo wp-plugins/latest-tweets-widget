@@ -75,6 +75,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.13 =
+* Added Russian translations
+
 = 1.0.12 =
 * Critical bug fix affecting some older versions of PHP
 
@@ -122,8 +125,8 @@ Do so at your own risk.
 
 == Upgrade Notice ==
 
-= 1.0.12 =
-* Important bug fixes and improvements, upgrade recommended.
+= 1.0.13 =
+* Bug fixes and improvements available.
 
 
 == Shortcodes ==

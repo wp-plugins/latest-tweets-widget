@@ -215,7 +215,7 @@ class Latest_Tweets_Widget extends WP_Widget {
     }
 
     /** @see WP_Widget::widget */
-    public function widget( array $args, $instance ) {
+    public function widget( $args, $instance ) {
         extract( $this->check_instance($instance) );
         // title is themed via Wordpress widget theming techniques
         $title = $args['before_title'] . apply_filters('widget_title', $title) . $args['after_title'];

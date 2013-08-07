@@ -77,6 +77,7 @@ Do so at your own risk.
 
 = 1.0.13 =
 * Added Russian translations
+* Fixed E_STRICT warning
 
 = 1.0.12 =
 * Critical bug fix affecting some older versions of PHP

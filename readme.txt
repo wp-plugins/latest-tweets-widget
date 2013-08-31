@@ -200,7 +200,8 @@ Here's an **example** of using some of the above in your theme's functions.php f
     }, 10 , 1 );
     
     add_filter('latest_tweets_render_tweet', function( $html, $date, $link, array $tweet ){
-        return '<p class="my-tweet">'.$html.'</p><p class="my-date"><a href="'.$link.'">'.$date.'</a></p>';
+        $pic = $tweet['user']['profile_image_url_https'];
+        return '<p class="my-tweet"><img src="'.$pic.'"/>'.$html.'</p><p class="my-date"><a href="'.$link.'">'.$date.'</a></p>';
     }, 10, 4 );
     
     add_filter('latest_tweets_render_after', function(){

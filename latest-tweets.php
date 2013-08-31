@@ -37,7 +37,7 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             }
         }
         // Build API params for "statuses/user_timeline" // https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
-        $trim_user = true;
+        $trim_user = false;
         $include_rts = ! empty($rts);
         $exclude_replies = empty($ats);
         $params = compact('exclude_replies','include_rts','trim_user','screen_name');
@@ -100,7 +100,7 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 $html = twitter_api_html( $text );
             }
             // piece together the whole tweet, allowing overide
-            $final = apply_filters('latest_tweets_render_tweet', $html, $date, $link );
+            $final = apply_filters('latest_tweets_render_tweet', $html, $date, $link, $tweet );
             if( $final === $html ){
                 $final = '<p class="tweet-text">'.$html.'</p>'.
                          '<p class="tweet-details"><a href="'.$link.'" target="_blank">'.$date.'</a></p>';
@@ -122,10 +122,15 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
 
 /**
  * Render tweets as HTML anywhere
+ * @param string $screen_name Twitter handle
+ * @param int $num Number of tweets to show, defaults to 5
+ * @param bool $rts Whether to show Retweets, defaults to true
+ * @param bool $ats Whether to show 'at' replies, defaults to true
+ * @return string HTML <div> element containing a list
  */
 function latest_tweets_render_html( $screen_name = '', $num = 5, $rts = true, $ats = true ){
     $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
-    $list  = apply_filters('latest_tweets_render_list', $items );
+    $list  = apply_filters('latest_tweets_render_list', $items, $screen_name );
     if( is_array($list) ){
         $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';
     }
@@ -221,7 +226,7 @@ class Latest_Tweets_Widget extends WP_Widget {
         $title = $args['before_title'] . apply_filters('widget_title', $title) . $args['after_title'];
         // by default tweets are rendered as an unordered list
         $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
-        $list  = apply_filters('latest_tweets_render_list', $items );
+        $list  = apply_filters('latest_tweets_render_list', $items, $screen_name );
         if( is_array($list) ){
             $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';
         }

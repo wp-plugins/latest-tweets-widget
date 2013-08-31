@@ -78,6 +78,7 @@ Do so at your own risk.
 = 1.0.13 =
 * Added Russian translations
 * Fixed E_STRICT warning
+* Passing more arguments to filters including profile data
 
 = 1.0.12 =
 * Critical bug fix affecting some older versions of PHP
@@ -198,9 +199,9 @@ Here's an **example** of using some of the above in your theme's functions.php f
         return $text; // <- will use default
     }, 10 , 1 );
     
-    add_filter('latest_tweets_render_tweet', function( $html, $date, $link ){
+    add_filter('latest_tweets_render_tweet', function( $html, $date, $link, array $tweet ){
         return '<p class="my-tweet">'.$html.'</p><p class="my-date"><a href="'.$link.'">'.$date.'</a></p>';
-    }, 10, 3 );
+    }, 10, 4 );
     
     add_filter('latest_tweets_render_after', function(){
         return '<footer><a href="https://twitter.com/me">More from me</a></footer>';

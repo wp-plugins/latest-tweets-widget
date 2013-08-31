@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,11 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.13 =
+* Added Russian translations
+* Fixed E_STRICT warning
+* Passing more arguments to filters including profile data
+
 = 1.0.12 =
 * Critical bug fix affecting some older versions of PHP
 
@@ -122,11 +127,8 @@ Do so at your own risk.
 
 == Upgrade Notice ==
 
-= 1.0.12 =
-* Upgrade if you get a fatal error on line 30
-
-= 1.0.11 =
-* Important bug fixes, upgrade highly recommended
+= 1.0.13 =
+* Bug fixes and improvements available.
 
 
 == Shortcodes ==
@@ -197,9 +199,9 @@ Here's an **example** of using some of the above in your theme's functions.php f
         return $text; // <- will use default
     }, 10 , 1 );
     
-    add_filter('latest_tweets_render_tweet', function( $html, $date, $link ){
+    add_filter('latest_tweets_render_tweet', function( $html, $date, $link, array $tweet ){
         return '<p class="my-tweet">'.$html.'</p><p class="my-date"><a href="'.$link.'">'.$date.'</a></p>';
-    }, 10, 3 );
+    }, 10, 4 );
     
     add_filter('latest_tweets_render_after', function(){
         return '<footer><a href="https://twitter.com/me">More from me</a></footer>';

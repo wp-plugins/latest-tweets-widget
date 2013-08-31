@@ -51,7 +51,7 @@ See the 'Other Notes' tab for theming information.
 
 = Why do I have to register my own Twitter app? =
 
-Because I'm proving code, not a service. If I set up a Twitter app for this plugin I'd be responsible for every person who uses it. 
+Because I'm providing code, not a service. If I set up a Twitter app for this plugin I'd be responsible for every person who uses it. 
 If Twitter closed my account or revoked my keys every instance of this plugin would break. Twitter also place limits on the number of users that can connect to a single app.
 
 = How I do know what my OAuth settings are? =

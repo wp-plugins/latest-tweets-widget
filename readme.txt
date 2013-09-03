@@ -75,6 +75,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.14 =
+* Added Dutch translations
+
 = 1.0.13 =
 * Added Russian translations
 * Fixed E_STRICT warning

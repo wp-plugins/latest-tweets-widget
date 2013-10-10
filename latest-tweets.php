@@ -76,17 +76,25 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
             }
             $params['max_id'] = $max_id;
         }
+        // Fix Wordpress's broken timezone implementation
+        $wp_timezone = get_option('timezone_string');
+        $os_timezone = date_default_timezone_get();
+        if( $os_timezone !== $wp_timezone ){
+            date_default_timezone_set( $wp_timezone );
+        }
         // render each tweet as a blocks of html for the widget list items
         $rendered = array();
         foreach( $tweets as $tweet ){
             extract( $tweet );
-            $link = esc_html( 'http://twitter.com/'.$screen_name.'/status/'.$id_str);
+            $handle = $user['screen_name'] or $handle = $screen_name;
+            $link = esc_html( 'http://twitter.com/'.$handle.'/status/'.$id_str);
             // render nice datetime, unless theme overrides with filter
             $date = apply_filters( 'latest_tweets_render_date', $created_at );
             if( $date === $created_at ){
                 function_exists('twitter_api_relative_date') or twitter_api_include('utils');
-                $date = esc_html( twitter_api_relative_date($created_at) );
-                $date = '<time datetime="'.$created_at.'">'.$date.'</time>';
+                $time = strtotime( $created_at );
+                $date = esc_html( twitter_api_relative_date($time) );
+                $date = '<time datetime="'.date_i18n( 'Y-m-d H:i:sO', $time ).'">'.$date.'</time>';
             }
             // render and linkify tweet, unless theme overrides with filter
             $html = apply_filters('latest_tweets_render_text', $text );
@@ -110,6 +118,10 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
         // cache rendered tweets
         if( $cachettl ){
             _twitter_api_cache_set( $cachekey, $rendered, $cachettl );
+        }
+        // put altered timezone back
+        if( $os_timezone !== $wp_timezone ){
+            date_default_timezone_set( $os_timezone );
         }
         return $rendered;
     }

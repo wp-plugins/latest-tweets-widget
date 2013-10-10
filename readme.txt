@@ -76,6 +76,9 @@ Do so at your own risk.
 == Changelog ==
 
 = 1.0.14 =
+* Timezone fixes
+* Fixed bad status link
+* Checking if APC disabled 
 * Added Dutch translations
 
 = 1.0.13 =

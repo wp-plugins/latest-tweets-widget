@@ -4,7 +4,7 @@ Donate link: http://timwhitlock.info/donate-to-a-project/
 Tags: twitter, tweets, oauth, api, rest, api, widget, sidebar
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ Do so at your own risk.
 == Changelog ==
 
 = 1.0.14 =
+* Timezone fixes
+* Fixed bad status link
+* Checking if APC disabled 
 * Added Dutch translations
 
 = 1.0.13 =

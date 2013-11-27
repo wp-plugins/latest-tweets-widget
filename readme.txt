@@ -75,6 +75,9 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.0.15 =
+* Passing additional params to widget_title filter
+
 = 1.0.14 =
 * Timezone fixes
 * Fixed bad status link

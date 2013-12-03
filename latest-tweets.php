@@ -105,6 +105,10 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 if( ! empty($entities['urls']) || ! empty($entities['media']) ){
                     $text = twitter_api_expand_urls( $text, $entities );
                 }
+                // strip characters that will choke Wordpress cache.
+                if( $cachettl && ! TWITTER_CACHE_APC ){
+                    $text = twitter_api_strip_emoji($text);
+                }
                 $html = twitter_api_html( $text );
             }
             // piece together the whole tweet, allowing overide

@@ -77,6 +77,7 @@ Do so at your own risk.
 
 = 1.0.15 =
 * Passing additional params to widget_title filter
+* Stripping four-byte Unicode sequences before wp cache inserts
 
 = 1.0.14 =
 * Timezone fixes

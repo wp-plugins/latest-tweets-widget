@@ -82,7 +82,7 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
         if( $os_timezone !== $wp_timezone ){
             date_default_timezone_set( $wp_timezone );
         }
-        // render each tweet as a blocks of html for the widget list items
+        // render each tweet as a block of html for the widget list items
         $rendered = array();
         foreach( $tweets as $tweet ){
             extract( $tweet );
@@ -111,7 +111,7 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 }
                 $html = twitter_api_html( $text );
             }
-            // piece together the whole tweet, allowing overide
+            // piece together the whole tweet, allowing override
             $final = apply_filters('latest_tweets_render_tweet', $html, $date, $link, $tweet );
             if( $final === $html ){
                 $final = '<p class="tweet-text">'.$html.'</p>'.

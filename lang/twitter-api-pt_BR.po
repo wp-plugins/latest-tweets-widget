@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:30:34 +0000\n"
+"PO-Revision-Date: Fri, 06 Dec 2013 18:36:39 +0000\n"
 "Last-Translator: Tim Whitlock\n"
-"Language-Team: Acme\n"
+"Language-Team: Wordpress\n"
 "Language: Portuguese (Brazil)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
@@ -16,10 +16,6 @@ msgstr ""
 "X-Loco-Target-Locale: pt_BR\n"
 "X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
-
-#: Forbidden
-msgid "Forbidden"
-msgstr "Proibido"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
@@ -62,6 +58,10 @@ msgstr "Criado"
 #: expectation-failed
 msgid "Expectation Failed"
 msgstr "Falha na expectativa"
+
+#: forbidden
+msgid "Forbidden"
+msgstr "Proibido"
 
 #: found
 msgid "Found"

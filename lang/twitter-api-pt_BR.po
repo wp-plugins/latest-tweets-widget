@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:21:00 +0000\n"
+"PO-Revision-Date: Fri, 06 Dec 2013 18:30:34 +0000\n"
 "Last-Translator: Tim Whitlock\n"
 "Language-Team: Acme\n"
 "Language: Portuguese (Brazil)\n"
@@ -17,43 +17,19 @@ msgstr ""
 "X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
 
-#: Accepted
-msgid "Accepted"
-msgstr "Aceito"
-
-#: Conflict
-msgid "Conflict"
-msgstr "Conflito"
-
-#: Continue
-msgid "Continue"
-msgstr "Continuar"
-
-#: Created
-msgid "Created"
-msgstr "Criado"
-
 #: Forbidden
 msgid "Forbidden"
 msgstr "Proibido"
-
-#: Found
-msgid "Found"
-msgstr "Encontrado(a)"
-
-#: Gone
-msgid "Gone"
-msgstr "Já era"
-
-#: OK
-msgid "OK"
-msgstr "OK"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
 msgid_plural "About %u hours ago"
 msgstr[0]  "Cerca de uma hora atrás"
 msgstr[1] "Cerca de %u horas atrás"
+
+#: accepted
+msgid "Accepted"
+msgstr "Aceito"
 
 #: authenticated-as-x
 msgid "Authenticated as @%s"
@@ -71,13 +47,33 @@ msgstr "Bad Request"
 msgid "Cannot enable Twitter API cache without APC extension"
 msgstr "Não é possível habilitar o cache da API do Twiiter sem APC..."
 
+#: conflict
+msgid "Conflict"
+msgstr "Conflito"
+
+#: continue
+msgid "Continue"
+msgstr "Continuar"
+
+#: created
+msgid "Created"
+msgstr "Criado"
+
 #: expectation-failed
 msgid "Expectation Failed"
 msgstr "Falha na expectativa"
 
+#: found
+msgid "Found"
+msgstr "Encontrado(a)"
+
 #: gateway-time-out
 msgid "Gateway Time-out"
 msgstr "Timeout no Gateway"
+
+#: gone
+msgid "Gone"
+msgstr "Já era"
 
 #: http-version-not-supported
 msgid "HTTP Version not supported"
@@ -150,6 +146,10 @@ msgstr "Não modificado"
 #: number-of-tweets
 msgid "Number of tweets"
 msgstr "Número de tweets"
+
+#: ok
+msgid "OK"
+msgstr "OK"
 
 #: partial-content
 msgid "Partial Content"

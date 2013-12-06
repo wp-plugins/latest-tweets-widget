@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:21:00 +0000\n"
+"PO-Revision-Date: Fri, 06 Dec 2013 18:30:34 +0000\n"
 "Last-Translator: Tim Whitlock\n"
 "Language-Team: Acme\n"
 "Language: Russian\n"
@@ -18,37 +18,9 @@ msgstr ""
 "X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
 
-#: Accepted
-msgid "Accepted"
-msgstr "Принято"
-
-#: Conflict
-msgid "Conflict"
-msgstr "Конфликт"
-
-#: Continue
-msgid "Continue"
-msgstr "Продолжить"
-
-#: Created
-msgid "Created"
-msgstr "Создано"
-
 #: Forbidden
 msgid "Forbidden"
 msgstr "Запрещено"
-
-#: Found
-msgid "Found"
-msgstr "Найдено"
-
-#: Gone
-msgid "Gone"
-msgstr "Отправляется"
-
-#: OK
-msgid "OK"
-msgstr "OK"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
@@ -56,6 +28,10 @@ msgid_plural "About %u hours ago"
 msgstr[0]  "Около часа назад"
 msgstr[1] "Около %u часов назад"
 msgstr[2] ""
+
+#: accepted
+msgid "Accepted"
+msgstr "Принято"
 
 #: authenticated-as-x
 msgid "Authenticated as @%s"
@@ -75,13 +51,33 @@ msgstr ""
 "Не удается включить Twitter API кэш, без "
 "расширения APC"
 
+#: conflict
+msgid "Conflict"
+msgstr "Конфликт"
+
+#: continue
+msgid "Continue"
+msgstr "Продолжить"
+
+#: created
+msgid "Created"
+msgstr "Создано"
+
 #: expectation-failed
 msgid "Expectation Failed"
 msgstr "Ожидание не удалось"
 
+#: found
+msgid "Found"
+msgstr "Найдено"
+
 #: gateway-time-out
 msgid "Gateway Time-out"
 msgstr "Шлюз Time-out"
+
+#: gone
+msgid "Gone"
+msgstr "Отправляется"
 
 #: http-version-not-supported
 msgid "HTTP Version not supported"
@@ -156,6 +152,10 @@ msgstr "Не Изменяется"
 #: number-of-tweets
 msgid "Number of tweets"
 msgstr "Количество твитов"
+
+#: ok
+msgid "OK"
+msgstr "OK"
 
 #: partial-content
 msgid "Partial Content"

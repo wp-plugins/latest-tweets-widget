@@ -3,149 +3,155 @@ msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:36:39 +0000\n"
+"PO-Revision-Date: Fri, 21 Mar 2014 14:49:34 +0000\n"
 "Last-Translator: Tim Whitlock\n"
 "Language-Team: Wordpress\n"
-"Language: German\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: Russian\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 "
+"&& (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz\n"
 "X-Loco-Source-Locale: en_GB\n"
-"X-Loco-Target-Locale: de_DE\n"
+"X-Loco-Target-Locale: ru_RU\n"
 "X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
 msgid_plural "About %u hours ago"
-msgstr[0]  "Vor ungefähr 1 Stunde"
-msgstr[1] "Vor ungefähr %u Stunden"
+msgstr[0] "Около часа назад"
+msgstr[1] "Около %u часов назад"
+msgstr[2] ""
 
 #: accepted
 msgid "Accepted"
-msgstr "Akzeptiert"
+msgstr "Принято"
 
 #: authenticated-as-x
 msgid "Authenticated as @%s"
-msgstr "Authentifiziert als @%s"
+msgstr "Авторизован как @%s"
 
 #: authorization-required
 msgid "Authorization Required"
-msgstr ""
+msgstr "Требуется Авторизация"
 
 #: bad-request
 msgid "Bad Request"
-msgstr ""
+msgstr "Плохой Запрос"
 
 #: cannot-enable-twitter-api-cache-without-apc-extens
 msgid "Cannot enable Twitter API cache without APC extension"
-msgstr "Der Twitter API Cache kann ohne APC Erweiterung nicht aktiviert werden"
+msgstr ""
+"Не удается включить Twitter API кэш, без "
+"расширения APC"
 
 #: conflict
 msgid "Conflict"
-msgstr ""
+msgstr "Конфликт"
 
 #: continue
 msgid "Continue"
-msgstr "Weiter"
+msgstr "Продолжить"
 
 #: created
 msgid "Created"
-msgstr "Erstellt"
+msgstr "Создано"
 
 #: expectation-failed
 msgid "Expectation Failed"
-msgstr ""
+msgstr "Ожидание не удалось"
 
 #: forbidden
 msgid "Forbidden"
-msgstr ""
+msgstr "Запрещено"
 
 #: found
 msgid "Found"
-msgstr "Gefunden"
+msgstr "Найдено"
 
 #: gateway-time-out
 msgid "Gateway Time-out"
-msgstr ""
+msgstr "Шлюз Time-out"
 
 #: gone
 msgid "Gone"
-msgstr ""
+msgstr "Отправляется"
 
 #: http-version-not-supported
 msgid "HTTP Version not supported"
-msgstr "HTTP Version wird nicht unterstützt"
+msgstr "Не поддерживаемая Версия HTTP"
 
 #: invalid-oauth-token
 msgid "Invalid OAuth token"
-msgstr "Ungültiger OAuth token"
+msgstr "Неправильный OAuth token"
 
 #: invalid-twitter-parameter
 msgid "Invalid Twitter parameter"
-msgstr "Ungültiger Twitter Parameter"
+msgstr "Не верный параметр Твиттера"
 
 #: just-now
 msgid "Just now"
-msgstr "Gerade eben"
+msgstr "Только что"
 
 #: key-required-even-if-secret-is-empty
 msgid "Key required even if secret is empty"
 msgstr ""
+"Требуется Ключ, даже если секретный ключ "
+"пуст"
 
 #: latest-tweets
 msgid "Latest Tweets"
-msgstr "Neueste Tweets"
+msgstr "Latest Tweets (Поледние твиты)"
 
 #: length-required
 msgid "Length Required"
-msgstr ""
+msgstr "Требуемая Длина"
 
 #: malformed-response-from-twitter
 msgid "Malformed response from Twitter"
-msgstr ""
+msgstr "Ошибочный ответ от Твиттера"
 
 #: method-not-allowed
 msgid "Method Not Allowed"
-msgstr ""
+msgstr "Запрещенный метод"
 
 #: moved-permanently
 msgid "Moved Permanently"
-msgstr ""
+msgstr "Перемещено на постоянно"
 
 #: multiple-choices
 msgid "Multiple Choices"
-msgstr ""
+msgstr "Множественный выбор"
 
 #: no-content
 msgid "No Content"
-msgstr "Kein Inhalt"
+msgstr "Нет подключения"
 
 #: non-authoritative-information
 msgid "Non-Authoritative Information"
-msgstr ""
+msgstr "Не авторитетная Информация"
 
 #: not-acceptable
 msgid "Not Acceptable"
-msgstr ""
+msgstr "Не Приемлемый"
 
 #: not-found
 msgid "Not Found"
-msgstr ""
+msgstr "Не Найдено"
 
 #: not-implemented
 msgid "Not Implemented"
-msgstr "Nicht implementiert"
+msgstr "Не выполнено"
 
 #: not-modified
 msgid "Not Modified"
-msgstr "Nicht modifiziert"
+msgstr "Не Изменяется"
 
 #: number-of-tweets
 msgid "Number of tweets"
-msgstr "Anzahl an Tweets"
+msgstr "Количество твитов"
 
 #: ok
 msgid "OK"
@@ -153,146 +159,154 @@ msgstr "OK"
 
 #: partial-content
 msgid "Partial Content"
-msgstr ""
+msgstr "Частичное Содержимое"
 
 #: payment-required
 msgid "Payment Required"
-msgstr ""
+msgstr "Требуется Оплата"
 
 #: plugin-not-yet-authenticated-with-twitter
 msgid "Plugin not yet authenticated with Twitter"
-msgstr "Das Plugin wurde noch nicht bei Twitter authentifiziert"
+msgstr "Плагин еще не получил доступ к Твиттеру"
 
 #: precondition-failed
 msgid "Precondition Failed"
-msgstr ""
+msgstr "Предварительное условие потерпело неудачу"
 
 #: proxy-authentication-required
 msgid "Proxy Authentication Required"
-msgstr ""
+msgstr "Требуется Идентификация Proxy"
 
 #: request-entity-too-large
 msgid "Request Entity Too Large"
-msgstr ""
+msgstr "Запаршиваемый объект слишком большой"
 
 #: request-time-out
 msgid "Request Time-out"
-msgstr ""
+msgstr "Запрос Time-out"
 
 #: request-uri-too-large
 msgid "Request-URI Too Large"
-msgstr ""
+msgstr "Запаршиваемый URI слишком большой"
 
 #: requested-range-not-satisfiable
 msgid "Requested range not satisfiable"
-msgstr ""
+msgstr "Запрошен не выполнимый ряд"
 
 #: reset-content
 msgid "Reset Content"
-msgstr ""
+msgstr "Повторите подключение"
 
 #: save-settings
 msgid "Save settings"
-msgstr "Einstellungen speichern"
+msgstr "Сохранить настройки"
 
 #: see-other
 msgid "See Other"
-msgstr ""
+msgstr "Посмотрите Другой"
 
 #: show-replies
 msgid "Show Replies"
-msgstr "Antworten anzeigen"
+msgstr "Показывать Ответы"
 
 #: show-retweets
 msgid "Show Retweets"
-msgstr "Retweets anzeigen"
+msgstr "Показывать Ретвиты"
 
 #: switching-protocols
 msgid "Switching Protocols"
-msgstr "Protokoll wird gewechselt"
+msgstr "Переключающиеся Протоколы"
 
 #: temporary-redirect
 msgid "Temporary Redirect"
-msgstr ""
+msgstr "Временное перенаправление"
 
 #: these-details-are-available-in
 msgid "These details are available in"
-msgstr "Diese Informationen findest du in"
+msgstr "Эти данные доступны в"
 
 #: twitter-api
 msgid "Twitter API"
-msgstr "Twitter API"
+msgstr "API Твиттера"
 
 #: twitter-api-authentication-settings
 msgid "Twitter API Authentication Settings"
-msgstr "Einstellungen zur Twitter API Authentifizierung"
+msgstr "Настройка подключения к API Твиттера"
 
 #: twitter-api-rate-limit-exceeded
 msgid "Twitter API rate limit exceeded"
-msgstr ""
+msgstr "API Твиттера превышает норму"
 
 #: twitter-application-is-not-fully-configured
 msgid "Twitter application is not fully configured"
-msgstr "Die Twitter Anwendung ist nicht vollständig konfiguriert"
+msgstr ""
+"Приложение Твиттера полностью не "
+"настроено"
 
 #: twitter-application-not-fully-configured
 msgid "Twitter application not fully configured"
-msgstr "Die Twitter Anwendung ist nicht vollständig konfiguriert"
+msgstr ""
+"Приложение в Твиттере не полностью "
+"настроено"
 
 #: twitter-client-not-authenticated
 msgid "Twitter client not authenticated"
-msgstr "Twitter Client nicht authentifiziert"
+msgstr "Пользователь Твиттера не аутентифицирован"
 
 #: twitter-error-x
 msgid "Twitter error #%d"
-msgstr "Twitter Fehler #%d"
+msgstr "Ошибка Твиттера #%d"
 
 #: twitter-handle
 msgid "Twitter handle"
-msgstr "Twitter Handle"
+msgstr "Логин в Твиттере"
 
 #: twitter-is-not-responding
 msgid "Twitter is not responding"
-msgstr "Twitter antwortet nicht"
+msgstr "Твиттер не отвечает"
 
 #: twitter-is-too-busy-to-respond
 msgid "Twitter is too busy to respond"
-msgstr ""
+msgstr "Твиттер слишком перегружен, чтобы ответить"
 
 #: twitter-server-error
 msgid "Twitter server error"
-msgstr "Twitter Server Fehler"
+msgstr "Ошибка сервера на стороне Твиттера"
 
 #: unsupported-media-type
 msgid "Unsupported Media Type"
-msgstr ""
+msgstr "Тип Медиа не поддерживается"
 
 #: use-proxy
 msgid "Use Proxy"
-msgstr ""
+msgstr "Используйте Proxy"
 
 #: widget-title
 msgid "Widget title"
-msgstr "Titel"
+msgstr "Заголовок виджета"
 
 #: wordpress-http-request-failure
 msgid "Wordpress HTTP request failure"
-msgstr "Wordpress HTTP Request Fehler"
+msgstr "Wordpress неудачный HTTP-запрос "
 
 #: x-minute-ago
 msgid "%u minute ago"
 msgid_plural "%u minutes ago"
-msgstr[0]  "Vor 1 Minute"
-msgstr[1] "Vor %u Minuten"
+msgstr[0] "1 минуту назад"
+msgstr[1] "%u минуты назад"
+msgstr[2] ""
 
 #: yesterday-at
 msgid "Yesterday at"
-msgstr "Gestern um"
+msgstr "Вчера в "
 
 #: you-dont-have-permission-to-manage-twitter-api-set
 msgid "You don't have permission to manage Twitter API settings"
-msgstr "Dir fehlen die Rechte, um die Twitter API Einstellungen zu verwalten"
+msgstr ""
+"Вы не имеете разрешения управлять "
+"настроечными параметрами программного API "
+"Твиттера"
 
 #: your-twitter-dashboard
 msgid "your Twitter dashboard"
-msgstr "deinem Twitter Dashboard"
+msgstr "Вашей панеле  в Твиттере"

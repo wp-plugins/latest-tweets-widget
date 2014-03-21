@@ -1,298 +1,297 @@
+# Loco Gettext template
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:36:39 +0000\n"
-"Last-Translator: Tim Whitlock\n"
-"Language-Team: Wordpress\n"
-"Language: Portuguese (Brazil)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Report-Msgid-Bugs-To: Tim Whitlock\n"
+"POT-Creation-Date: Fri, 21 Mar 2014 14:49:33 +0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz\n"
-"X-Loco-Source-Locale: en_GB\n"
-"X-Loco-Target-Locale: pt_BR\n"
-"X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
 msgid_plural "About %u hours ago"
-msgstr[0]  "Cerca de uma hora atrás"
-msgstr[1] "Cerca de %u horas atrás"
+msgstr[0] ""
+msgstr[1] ""
 
 #: accepted
 msgid "Accepted"
-msgstr "Aceito"
+msgstr ""
 
 #: authenticated-as-x
 msgid "Authenticated as @%s"
-msgstr "Autenticado como @%s"
+msgstr ""
 
 #: authorization-required
 msgid "Authorization Required"
-msgstr "Autorização exigida"
+msgstr ""
 
 #: bad-request
 msgid "Bad Request"
-msgstr "Bad Request"
+msgstr ""
 
 #: cannot-enable-twitter-api-cache-without-apc-extens
 msgid "Cannot enable Twitter API cache without APC extension"
-msgstr "Não é possível habilitar o cache da API do Twiiter sem APC..."
+msgstr ""
 
 #: conflict
 msgid "Conflict"
-msgstr "Conflito"
+msgstr ""
 
 #: continue
 msgid "Continue"
-msgstr "Continuar"
+msgstr ""
 
 #: created
 msgid "Created"
-msgstr "Criado"
+msgstr ""
 
 #: expectation-failed
 msgid "Expectation Failed"
-msgstr "Falha na expectativa"
+msgstr ""
 
 #: forbidden
 msgid "Forbidden"
-msgstr "Proibido"
+msgstr ""
 
 #: found
 msgid "Found"
-msgstr "Encontrado(a)"
+msgstr ""
 
 #: gateway-time-out
 msgid "Gateway Time-out"
-msgstr "Timeout no Gateway"
+msgstr ""
 
 #: gone
 msgid "Gone"
-msgstr "Já era"
+msgstr ""
 
 #: http-version-not-supported
 msgid "HTTP Version not supported"
-msgstr "Versão HTTP não suportada"
+msgstr ""
 
 #: invalid-oauth-token
 msgid "Invalid OAuth token"
-msgstr "Token OAuth inválido"
+msgstr ""
 
 #: invalid-twitter-parameter
 msgid "Invalid Twitter parameter"
-msgstr "Parâmetro do Twitter inválido"
+msgstr ""
 
 #: just-now
 msgid "Just now"
-msgstr "Agora mesmo"
+msgstr ""
 
 #: key-required-even-if-secret-is-empty
 msgid "Key required even if secret is empty"
-msgstr "Chave exigida mesmo se o secret estiver vazio"
+msgstr ""
 
 #: latest-tweets
 msgid "Latest Tweets"
-msgstr "Últimos Tweets"
+msgstr ""
 
 #: length-required
 msgid "Length Required"
-msgstr "Comprimento exigido"
+msgstr ""
 
 #: malformed-response-from-twitter
 msgid "Malformed response from Twitter"
-msgstr "Resposta \"malformed\" do Twitter"
+msgstr ""
 
 #: method-not-allowed
 msgid "Method Not Allowed"
-msgstr "Método Não Permitido"
+msgstr ""
 
 #: moved-permanently
 msgid "Moved Permanently"
-msgstr "Movido permanentemente"
+msgstr ""
 
 #: multiple-choices
 msgid "Multiple Choices"
-msgstr "Múltipla escolha"
+msgstr ""
 
 #: no-content
 msgid "No Content"
-msgstr "Sem conteúdo"
+msgstr ""
 
 #: non-authoritative-information
 msgid "Non-Authoritative Information"
-msgstr "Informação não-autoritativa"
+msgstr ""
 
 #: not-acceptable
 msgid "Not Acceptable"
-msgstr "Não Aceitável"
+msgstr ""
 
 #: not-found
 msgid "Not Found"
-msgstr "Não Encontrado"
+msgstr ""
 
 #: not-implemented
 msgid "Not Implemented"
-msgstr "Não Implementado"
+msgstr ""
 
 #: not-modified
 msgid "Not Modified"
-msgstr "Não modificado"
+msgstr ""
 
 #: number-of-tweets
 msgid "Number of tweets"
-msgstr "Número de tweets"
+msgstr ""
 
 #: ok
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: partial-content
 msgid "Partial Content"
-msgstr "Conteúdo parcial"
+msgstr ""
 
 #: payment-required
 msgid "Payment Required"
-msgstr "Pagamento Exigido"
+msgstr ""
 
 #: plugin-not-yet-authenticated-with-twitter
 msgid "Plugin not yet authenticated with Twitter"
-msgstr "Plugin ainda não autenticado com o Twitter"
+msgstr ""
 
 #: precondition-failed
 msgid "Precondition Failed"
-msgstr "Falha na pré-condição"
+msgstr ""
 
 #: proxy-authentication-required
 msgid "Proxy Authentication Required"
-msgstr "Autenticação Proxy Exigida"
+msgstr ""
 
 #: request-entity-too-large
 msgid "Request Entity Too Large"
-msgstr "Entidade do request muito grande"
+msgstr ""
 
 #: request-time-out
 msgid "Request Time-out"
-msgstr "Request Time-out"
+msgstr ""
 
 #: request-uri-too-large
 msgid "Request-URI Too Large"
-msgstr "URI de Request muito grande"
+msgstr ""
 
 #: requested-range-not-satisfiable
 msgid "Requested range not satisfiable"
-msgstr "Range solicitado não satisfatório"
+msgstr ""
 
 #: reset-content
 msgid "Reset Content"
-msgstr "Resetar conteúdo"
+msgstr ""
 
 #: save-settings
 msgid "Save settings"
-msgstr "Salvar"
+msgstr ""
 
 #: see-other
 msgid "See Other"
-msgstr "Ver outros"
+msgstr ""
 
 #: show-replies
 msgid "Show Replies"
-msgstr "Mostrar Replies"
+msgstr ""
 
 #: show-retweets
 msgid "Show Retweets"
-msgstr "Mostrar RTs"
+msgstr ""
 
 #: switching-protocols
 msgid "Switching Protocols"
-msgstr "Trocando protocolos"
+msgstr ""
 
 #: temporary-redirect
 msgid "Temporary Redirect"
-msgstr "Redirecionamento Temporário"
+msgstr ""
 
 #: these-details-are-available-in
 msgid "These details are available in"
-msgstr "Detalhes disponíveis em"
+msgstr ""
 
 #: twitter-api
 msgid "Twitter API"
-msgstr "API do Twitter"
+msgstr ""
 
 #: twitter-api-authentication-settings
 msgid "Twitter API Authentication Settings"
-msgstr "Configurações de Autenticação da API do Twitter"
+msgstr ""
 
 #: twitter-api-rate-limit-exceeded
 msgid "Twitter API rate limit exceeded"
-msgstr "Taxa de limite da API do Twitter excedida"
+msgstr ""
 
 #: twitter-application-is-not-fully-configured
 msgid "Twitter application is not fully configured"
-msgstr "Aplicação do Twitter não está totalmente configurada"
+msgstr ""
 
 #: twitter-application-not-fully-configured
 msgid "Twitter application not fully configured"
-msgstr "Aplicação do Twitter não totalmente configurada"
+msgstr ""
 
 #: twitter-client-not-authenticated
 msgid "Twitter client not authenticated"
-msgstr "Cliente do Twitter não autenticado"
+msgstr ""
 
 #: twitter-error-x
 msgid "Twitter error #%d"
-msgstr "Erro no Twitter #%d"
+msgstr ""
 
 #: twitter-handle
 msgid "Twitter handle"
-msgstr "Login no Twitter"
+msgstr ""
 
 #: twitter-is-not-responding
 msgid "Twitter is not responding"
-msgstr "Twitter não está respondendo"
+msgstr ""
 
 #: twitter-is-too-busy-to-respond
 msgid "Twitter is too busy to respond"
-msgstr "Twitter muito ocupado para responder"
+msgstr ""
 
 #: twitter-server-error
 msgid "Twitter server error"
-msgstr "Erro no Servidor do Twitter"
+msgstr ""
 
 #: unsupported-media-type
 msgid "Unsupported Media Type"
-msgstr "Tipo de mídia não suportado"
+msgstr ""
 
 #: use-proxy
 msgid "Use Proxy"
-msgstr "Usar Proxy"
+msgstr ""
 
 #: widget-title
 msgid "Widget title"
-msgstr "Título do Widget"
+msgstr ""
 
 #: wordpress-http-request-failure
 msgid "Wordpress HTTP request failure"
-msgstr "Falha no HTTP request do Wordpress"
+msgstr ""
 
 #: x-minute-ago
 msgid "%u minute ago"
 msgid_plural "%u minutes ago"
-msgstr[0]  "1 minuto atrás"
-msgstr[1] "%u minutos atrás"
+msgstr[0] ""
+msgstr[1] ""
 
 #: yesterday-at
 msgid "Yesterday at"
-msgstr "Ontem às"
+msgstr ""
 
 #: you-dont-have-permission-to-manage-twitter-api-set
 msgid "You don't have permission to manage Twitter API settings"
-msgstr "Você não tem permissão para gerenciar a API do Twitter"
+msgstr ""
 
 #: your-twitter-dashboard
 msgid "your Twitter dashboard"
-msgstr "seu painel do Twitter"
+msgstr ""

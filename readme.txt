@@ -75,6 +75,14 @@ Do so at your own risk.
 
 == Changelog ==
 
+= 1.1.0 =
+* Restructured library directory
+* More friendly front end error when not configured
+* Caching disabled in debug mode
+* Empty timezone_string fix
+* Better tweet linkifying using entities
+* Better l10n bootstrapping
+
 = 1.0.15 =
 * Passing additional params to widget_title filter
 * Stripping four-byte Unicode sequences before wp cache inserts
@@ -137,7 +145,7 @@ Do so at your own risk.
 
 == Upgrade Notice ==
 
-= 1.0.15 =
+= 1.1.0 =
 * Bug fixes and improvements available.
 
 

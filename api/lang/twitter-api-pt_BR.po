@@ -3,296 +3,296 @@ msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 06 Dec 2013 18:36:39 +0000\n"
+"PO-Revision-Date: Fri, 21 Mar 2014 14:49:33 +0000\n"
 "Last-Translator: Tim Whitlock\n"
 "Language-Team: Wordpress\n"
-"Language: Dutch\n"
+"Language: Portuguese (Brazil)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz\n"
 "X-Loco-Source-Locale: en_GB\n"
-"X-Loco-Target-Locale: nl_NL\n"
+"X-Loco-Target-Locale: pt_BR\n"
 "X-Loco-Tagged: \n"
 "X-Poedit-SourceCharset: UTF-8"
 
 #: about-an-hour-ago
 msgid "About an hour ago"
 msgid_plural "About %u hours ago"
-msgstr[0]  "Ongeveer 1 uur geleden"
-msgstr[1] "Ongeveer %u uur geleden"
+msgstr[0] "Cerca de uma hora atrás"
+msgstr[1] "Cerca de %u horas atrás"
 
 #: accepted
 msgid "Accepted"
-msgstr "Geaccepteerd"
+msgstr "Aceito"
 
 #: authenticated-as-x
 msgid "Authenticated as @%s"
-msgstr "Authorizeren als @%s"
+msgstr "Autenticado como @%s"
 
 #: authorization-required
 msgid "Authorization Required"
-msgstr "Authorizatie vereist"
+msgstr "Autorização exigida"
 
 #: bad-request
 msgid "Bad Request"
-msgstr "Foute request"
+msgstr "Bad Request"
 
 #: cannot-enable-twitter-api-cache-without-apc-extens
 msgid "Cannot enable Twitter API cache without APC extension"
-msgstr "Kan de Twitter API Cache niet activeren zonder de APC extensie"
+msgstr "Não é possível habilitar o cache da API do Twiiter sem APC..."
 
 #: conflict
 msgid "Conflict"
-msgstr "Conflict"
+msgstr "Conflito"
 
 #: continue
 msgid "Continue"
-msgstr "Ga verder"
+msgstr "Continuar"
 
 #: created
 msgid "Created"
-msgstr "Gemaakt"
+msgstr "Criado"
 
 #: expectation-failed
 msgid "Expectation Failed"
-msgstr "Verwachtingsfout"
+msgstr "Falha na expectativa"
 
 #: forbidden
 msgid "Forbidden"
-msgstr "Verboden"
+msgstr "Proibido"
 
 #: found
 msgid "Found"
-msgstr "Gevonden"
+msgstr "Encontrado(a)"
 
 #: gateway-time-out
 msgid "Gateway Time-out"
-msgstr "Gateway time-out"
+msgstr "Timeout no Gateway"
 
 #: gone
 msgid "Gone"
-msgstr "Weg"
+msgstr "Já era"
 
 #: http-version-not-supported
 msgid "HTTP Version not supported"
-msgstr "HTTP Versie niet ondersteund"
+msgstr "Versão HTTP não suportada"
 
 #: invalid-oauth-token
 msgid "Invalid OAuth token"
-msgstr "Ongeldige OAuth token"
+msgstr "Token OAuth inválido"
 
 #: invalid-twitter-parameter
 msgid "Invalid Twitter parameter"
-msgstr "Ongeldige Twitter parameter"
+msgstr "Parâmetro do Twitter inválido"
 
 #: just-now
 msgid "Just now"
-msgstr "Zojuist"
+msgstr "Agora mesmo"
 
 #: key-required-even-if-secret-is-empty
 msgid "Key required even if secret is empty"
-msgstr "Key (sleutel) vereist ookal is secret (geheim) leeg"
+msgstr "Chave exigida mesmo se o secret estiver vazio"
 
 #: latest-tweets
 msgid "Latest Tweets"
-msgstr "Laatste tweets"
+msgstr "Últimos Tweets"
 
 #: length-required
 msgid "Length Required"
-msgstr "Lengte vereist"
+msgstr "Comprimento exigido"
 
 #: malformed-response-from-twitter
 msgid "Malformed response from Twitter"
-msgstr "Onjuiste response van Twitter"
+msgstr "Resposta \"malformed\" do Twitter"
 
 #: method-not-allowed
 msgid "Method Not Allowed"
-msgstr "Methode niet toegestaan"
+msgstr "Método Não Permitido"
 
 #: moved-permanently
 msgid "Moved Permanently"
-msgstr "Permanent verhuisd"
+msgstr "Movido permanentemente"
 
 #: multiple-choices
 msgid "Multiple Choices"
-msgstr "Meerdere keuzes"
+msgstr "Múltipla escolha"
 
 #: no-content
 msgid "No Content"
-msgstr "Geen inhoud"
+msgstr "Sem conteúdo"
 
 #: non-authoritative-information
 msgid "Non-Authoritative Information"
-msgstr "Niet-geauthoriseerde informatie"
+msgstr "Informação não-autoritativa"
 
 #: not-acceptable
 msgid "Not Acceptable"
-msgstr "Niet acceptabel"
+msgstr "Não Aceitável"
 
 #: not-found
 msgid "Not Found"
-msgstr "Niet gevonden"
+msgstr "Não Encontrado"
 
 #: not-implemented
 msgid "Not Implemented"
-msgstr "Niet geïmplementeerd"
+msgstr "Não Implementado"
 
 #: not-modified
 msgid "Not Modified"
-msgstr "Niet aangepast"
+msgstr "Não modificado"
 
 #: number-of-tweets
 msgid "Number of tweets"
-msgstr "Aantal tweets"
+msgstr "Número de tweets"
 
 #: ok
 msgid "OK"
-msgstr "Oké"
+msgstr "OK"
 
 #: partial-content
 msgid "Partial Content"
-msgstr "Gedeeltelijke content"
+msgstr "Conteúdo parcial"
 
 #: payment-required
 msgid "Payment Required"
-msgstr "Betaling vereist"
+msgstr "Pagamento Exigido"
 
 #: plugin-not-yet-authenticated-with-twitter
 msgid "Plugin not yet authenticated with Twitter"
-msgstr "Plugin nog niet geauthoriseerd bij Twitter"
+msgstr "Plugin ainda não autenticado com o Twitter"
 
 #: precondition-failed
 msgid "Precondition Failed"
-msgstr "Precondition fout"
+msgstr "Falha na pré-condição"
 
 #: proxy-authentication-required
 msgid "Proxy Authentication Required"
-msgstr "Proxy authenticatie vereist"
+msgstr "Autenticação Proxy Exigida"
 
 #: request-entity-too-large
 msgid "Request Entity Too Large"
-msgstr "Request entiteit te groot"
+msgstr "Entidade do request muito grande"
 
 #: request-time-out
 msgid "Request Time-out"
-msgstr "Request time-out"
+msgstr "Request Time-out"
 
 #: request-uri-too-large
 msgid "Request-URI Too Large"
-msgstr "Request-URI te groot"
+msgstr "URI de Request muito grande"
 
 #: requested-range-not-satisfiable
 msgid "Requested range not satisfiable"
-msgstr "Gevraagd bereik niet voldoende"
+msgstr "Range solicitado não satisfatório"
 
 #: reset-content
 msgid "Reset Content"
-msgstr "Content resetten"
+msgstr "Resetar conteúdo"
 
 #: save-settings
 msgid "Save settings"
-msgstr "Instellingen opslaan"
+msgstr "Salvar"
 
 #: see-other
 msgid "See Other"
-msgstr "Bekijk andere"
+msgstr "Ver outros"
 
 #: show-replies
 msgid "Show Replies"
-msgstr "Antwoorden laten zien"
+msgstr "Mostrar Replies"
 
 #: show-retweets
 msgid "Show Retweets"
-msgstr "Retweets laten zien"
+msgstr "Mostrar RTs"
 
 #: switching-protocols
 msgid "Switching Protocols"
-msgstr "Protocol wisselen"
+msgstr "Trocando protocolos"
 
 #: temporary-redirect
 msgid "Temporary Redirect"
-msgstr "Tijdelijke omleiding"
+msgstr "Redirecionamento Temporário"
 
 #: these-details-are-available-in
 msgid "These details are available in"
-msgstr "Deze details zijn beschikbaar in"
+msgstr "Detalhes disponíveis em"
 
 #: twitter-api
 msgid "Twitter API"
-msgstr "Twitter API"
+msgstr "API do Twitter"
 
 #: twitter-api-authentication-settings
 msgid "Twitter API Authentication Settings"
-msgstr "Twitter API authenticatie-instellingen"
+msgstr "Configurações de Autenticação da API do Twitter"
 
 #: twitter-api-rate-limit-exceeded
 msgid "Twitter API rate limit exceeded"
-msgstr "Twitter API limiet bereikt"
+msgstr "Taxa de limite da API do Twitter excedida"
 
 #: twitter-application-is-not-fully-configured
 msgid "Twitter application is not fully configured"
-msgstr "Twitter applicatie is niet volledig geconfigureerd"
+msgstr "Aplicação do Twitter não está totalmente configurada"
 
 #: twitter-application-not-fully-configured
 msgid "Twitter application not fully configured"
-msgstr "Twitter apllicatie is niet volledig geconfigureerd"
+msgstr "Aplicação do Twitter não totalmente configurada"
 
 #: twitter-client-not-authenticated
 msgid "Twitter client not authenticated"
-msgstr "Twitter Client niet geauthoriseerd"
+msgstr "Cliente do Twitter não autenticado"
 
 #: twitter-error-x
 msgid "Twitter error #%d"
-msgstr "Twitter fout #%d"
+msgstr "Erro no Twitter #%d"
 
 #: twitter-handle
 msgid "Twitter handle"
-msgstr "Twitternaam"
+msgstr "Login no Twitter"
 
 #: twitter-is-not-responding
 msgid "Twitter is not responding"
-msgstr "Twitter reageert niet"
+msgstr "Twitter não está respondendo"
 
 #: twitter-is-too-busy-to-respond
 msgid "Twitter is too busy to respond"
-msgstr "Twitter is te druk om te antwoorden"
+msgstr "Twitter muito ocupado para responder"
 
 #: twitter-server-error
 msgid "Twitter server error"
-msgstr "Twitter serverfout"
+msgstr "Erro no Servidor do Twitter"
 
 #: unsupported-media-type
 msgid "Unsupported Media Type"
-msgstr "Ongeldig mediatype"
+msgstr "Tipo de mídia não suportado"
 
 #: use-proxy
 msgid "Use Proxy"
-msgstr "Gebruik proxy"
+msgstr "Usar Proxy"
 
 #: widget-title
 msgid "Widget title"
-msgstr "Titel"
+msgstr "Título do Widget"
 
 #: wordpress-http-request-failure
 msgid "Wordpress HTTP request failure"
-msgstr "Wordpress HTTP Request fout"
+msgstr "Falha no HTTP request do Wordpress"
 
 #: x-minute-ago
 msgid "%u minute ago"
 msgid_plural "%u minutes ago"
-msgstr[0]  "1 minuut geleden"
-msgstr[1] "%u minuten geleden"
+msgstr[0] "1 minuto atrás"
+msgstr[1] "%u minutos atrás"
 
 #: yesterday-at
 msgid "Yesterday at"
-msgstr "Gisteren om"
+msgstr "Ontem às"
 
 #: you-dont-have-permission-to-manage-twitter-api-set
 msgid "You don't have permission to manage Twitter API settings"
-msgstr "Je hebt geen rechten om de Twitter API instellingen aan te passen"
+msgstr "Você não tem permissão para gerenciar a API do Twitter"
 
 #: your-twitter-dashboard
 msgid "your Twitter dashboard"
-msgstr "Twitter Dashboard"
+msgstr "seu painel do Twitter"

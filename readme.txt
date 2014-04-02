@@ -21,7 +21,7 @@ Built by <a href="//twitter.com/timwhitlock">@timwhitlock</a> / <a rel="author" 
 
 The underlying Twitter API library is [available on Github](https://github.com/timwhitlock/wp-twitter-api)
 
-Also by this author: [Loco Translate](http://wordpress.org/support/plugin/loco-translate)
+Also by this author: [Loco Translate](http://wordpress.org/plugins/loco-translate/)
 
 
 == Installation ==
@@ -76,6 +76,7 @@ Do so at your own risk.
 == Changelog ==
 
 = 1.1.0 =
+* Handling of truncated retweets
 * Restructured library directory
 * More friendly front end error when not configured
 * Caching disabled in debug mode

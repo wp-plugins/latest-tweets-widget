@@ -21,9 +21,9 @@ function twitter_api_html( $src, $target = '_blank', $alreadyhtml = false ){
     // linkify URLs
     $src = twitter_api_html_linkify_urls( $src, $target );
     // linkify @names
-    $src = preg_replace('!@([a-z0-9_]{1,15})!i', '<a class="twitter-screen-name" href="https://twitter.com/\\1" target="'.$target.'">\\0</a>', $src );
+    $src = preg_replace('!@([a-z0-9_]{1,15})!i', '<a class="twitter-screen-name" href="https://twitter.com/\\1" target="'.$target.'" rel="nofollow">\\0</a>', $src );
     // linkify #hashtags
-    $src = preg_replace('/(?<!&)#(\w+)/i', '<a class="twitter-hashtag" href="https://twitter.com/search?q=%23\\1&amp;src=hash" target="'.$target.'">\\0</a>', $src );
+    $src = preg_replace('/(?<!&)#(\w+)/i', '<a class="twitter-hashtag" href="https://twitter.com/search?q=%23\\1&amp;src=hash" target="'.$target.'" rel="nofollow">\\0</a>', $src );
     return $src;
 } 
 
@@ -119,8 +119,8 @@ function twitter_api_html_linkify_callback( array $r ){
     if( isset($label{30}) ){
         $label = substr_replace( $label, '&hellip;', 30 );
     }
-    $label = str_replace( '#', '&#35;', $label );
-    return '<a href="'.$href.'" target="_blank">'.$label.'</a>';
+    $label = rtrim( str_replace( '#', '&#35;', $label ), '/#?');
+    return '<a href="'.$href.'" target="_blank" rel="nofollow">'.$label.'</a>';
 }
 
 

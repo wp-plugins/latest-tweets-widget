@@ -4,7 +4,7 @@ Plugin Name: Latest Tweets Widget
 Plugin URI: http://wordpress.org/extend/plugins/latest-tweets-widget/
 Description: Provides a sidebar widget showing latest tweets - compatible with the new Twitter API 1.1
 Author: Tim Whitlock
-Version: 1.1.0
+Version: 1.1.1
 Author URI: http://timwhitlock.info/
 */
 
@@ -18,7 +18,7 @@ Author URI: http://timwhitlock.info/
  * @param bool whether to show at replies
  * @return array blocks of html expected by the widget
  */
-function latest_tweets_render( $screen_name, $count, $rts, $ats ){
+function latest_tweets_render( $screen_name, $count, $rts, $ats, $pop = 0 ){
     try {
         if( ! function_exists('twitter_api_get') ){
             require_once dirname(__FILE__).'/api/twitter-api.php';
@@ -48,12 +48,11 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
         $params = compact('exclude_replies','include_rts','trim_user','screen_name');
         // Stripping tweets means we may get less than $count tweets.
         // we'll keep going until we get the amount we need, but may as well get more each time.
-        if( $exclude_replies || ! $include_rts ){
-            $params['count'] = $count * 3;
+        if( $exclude_replies || ! $include_rts || $pop ){
+            $params['count'] = 100;
         }
-        // else ensure we always get more than one to avoid infinite loop on max_id bug
         else {
-            $params['count'] = max( 2, $count );
+            $params['count'] = max( $count, 2 );
         }
         // pull tweets until we either have enough, or there are no more
         $tweets = array();
@@ -67,6 +66,10 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 $max_id = $tweet['id_str'];
                 if( ! $include_rts && preg_match('/^(?:RT|MT)[ :\-]*@/i', $tweet['text']) ){
                     // skipping manual RT
+                    continue;
+                }
+                if( $pop > ( $tweet['retweet_count'] + $tweet['favorite_count'] ) ){
+                    // skipping tweets not deemed popular enough
                     continue;
                 }
                 $tweets[] = $tweet;
@@ -87,6 +90,8 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
         if( $os_timezone !== $wp_timezone ){
             date_default_timezone_set( $wp_timezone );
         }
+        // Let theme disable or override emoji rendering
+        $emoji_callback = apply_filters('latest_tweets_emoji_callback', 'twitter_api_replace_emoji_callback' );
         // render each tweet as a block of html for the widget list items
         $rendered = array();
         foreach( $tweets as $tweet ){
@@ -101,15 +106,16 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 $date = esc_html( twitter_api_relative_date($time) );
                 $date = '<time datetime="'.date_i18n( 'Y-m-d H:i:sO', $time ).'">'.$date.'</time>';
             }
+            // handle original retweet text as RT may be truncated
+            if( $include_rts && isset($retweeted_status) && preg_match('/^RT\s+@[a-z0-9_]{1,15}[\s:]+/i', $text, $prefix ) ){
+                $text = $prefix[0].$retweeted_status['text'];
+                unset($retweeted_status);
+            }
             // render and linkify tweet, unless theme overrides with filter
             $html = apply_filters('latest_tweets_render_text', $text );
             if( $html === $text ){
                 if( ! function_exists('twitter_api_html') ){
                     twitter_api_include('utils');
-                }
-                // strip characters that will choke Wordpress cache.
-                if( $cachettl && ! TWITTER_CACHE_APC ){
-                    $text = twitter_api_strip_emoji( $text );
                 }
                 // htmlify tweet, using entities if we can
                 if( isset($entities) && is_array($entities) ){
@@ -118,6 +124,14 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
                 }
                 else {
                     $html = twitter_api_html( $text );
+                }
+                // render emoji, unless filtered out
+                if( $emoji_callback ){
+                    $html = twitter_api_replace_emoji( $html, $emoji_callback );
+                }
+                // strip characters that will choke mysql cache.
+                if( $cachettl && ! TWITTER_CACHE_APC ){
+                    $html = twitter_api_strip_quadruple_bytes( $html );
                 }
             }
             // piece together the whole tweet, allowing override
@@ -153,8 +167,8 @@ function latest_tweets_render( $screen_name, $count, $rts, $ats ){
  * @param bool $ats Whether to show 'at' replies, defaults to true
  * @return string HTML <div> element containing a list
  */
-function latest_tweets_render_html( $screen_name = '', $num = 5, $rts = true, $ats = true ){
-    $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
+function latest_tweets_render_html( $screen_name = '', $num = 5, $rts = true, $ats = true, $pop = 0 ){
+    $items = latest_tweets_render( $screen_name, $num, $rts, $ats, $pop );
     $list  = apply_filters('latest_tweets_render_list', $items, $screen_name );
     if( is_array($list) ){
         $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';
@@ -194,7 +208,12 @@ class Latest_Tweets_Widget extends WP_Widget {
             array (
                 'name'  => 'num',
                 'label' => __('Number of tweets','twitter-api'),
-                'type'  => 'text'
+                'type'  => 'number'
+            ),
+            array (
+                'name'  => 'pop',
+                'label' => __('Minimum popularity','twitter-api'),
+                'type'  => 'number'
             ),
             array (
                 'name'  => 'rts',
@@ -219,7 +238,8 @@ class Latest_Tweets_Widget extends WP_Widget {
         $instance += array (
             'title' => __('Latest Tweets','twitter-api'),
             'screen_name' => '',
-            'num' => '5',
+            'num' => 5,
+            'pop' => 0,
             'rts' => '',
             'ats' => '',
         );
@@ -240,7 +260,7 @@ class Latest_Tweets_Widget extends WP_Widget {
             }
             else {
                 $attrs = '';
-                echo '<p>'.$label.'<br /><input class="widefat" type="text" value="'.esc_attr($value).'" id="'.$elmid.'" name="'.$fname.'" /></p>';
+                echo '<p>'.$label.'<br /><input class="widefat" type="',$val['type'],'" value="'.esc_attr($value).'" id="'.$elmid.'" name="'.$fname.'" /></p>';
             }
         }
     }
@@ -251,7 +271,7 @@ class Latest_Tweets_Widget extends WP_Widget {
         // title is themed via Wordpress widget theming techniques
         $title = $args['before_title'] . apply_filters('widget_title', $title, $instance, $this->id_base ) . $args['after_title'];
         // by default tweets are rendered as an unordered list
-        $items = latest_tweets_render( $screen_name, $num, $rts, $ats );
+        $items = latest_tweets_render( $screen_name, $num, $rts, $ats, $pop );
         $list  = apply_filters('latest_tweets_render_list', $items, $screen_name );
         if( is_array($list) ){
             $list = '<ul><li>'.implode('</li><li>',$items).'</li></ul>';

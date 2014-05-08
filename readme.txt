@@ -273,7 +273,7 @@ If you want to disable Emoji image replacement, you can filter the replacement c
         return '';
     } );
 
-- or to strip Emoji characters from all tweets, return your own replacement function that returns something else, e.g:
+or to strip Emoji characters from all tweets, return your own replacement function that returns something else, e.g:
 
     add_filter('latest_tweets_emoji_callback', function( $func ){
         return function( array $match ){

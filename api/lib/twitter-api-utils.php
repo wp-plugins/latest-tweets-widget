@@ -21,9 +21,9 @@ function twitter_api_html( $src, $target = '_blank', $alreadyhtml = false ){
     // linkify URLs
     $src = twitter_api_html_linkify_urls( $src, $target );
     // linkify @names
-    $src = preg_replace('!@([a-z0-9_]{1,15})!i', '<a class="twitter-screen-name" href="https://twitter.com/\\1" target="'.$target.'">\\0</a>', $src );
+    $src = preg_replace('!@([a-z0-9_]{1,15})!i', '<a class="twitter-screen-name" href="https://twitter.com/\\1" target="'.$target.'" rel="nofollow">\\0</a>', $src );
     // linkify #hashtags
-    $src = preg_replace('/(?<!&)#(\w+)/i', '<a class="twitter-hashtag" href="https://twitter.com/search?q=%23\\1&amp;src=hash" target="'.$target.'">\\0</a>', $src );
+    $src = preg_replace('/(?<!&)#(\w+)/i', '<a class="twitter-hashtag" href="https://twitter.com/search?q=%23\\1&amp;src=hash" target="'.$target.'" rel="nofollow">\\0</a>', $src );
     return $src;
 } 
 
@@ -119,8 +119,8 @@ function twitter_api_html_linkify_callback( array $r ){
     if( isset($label{30}) ){
         $label = substr_replace( $label, '&hellip;', 30 );
     }
-    $label = str_replace( '#', '&#35;', $label );
-    return '<a href="'.$href.'" target="_blank">'.$label.'</a>';
+    $label = rtrim( str_replace( '#', '&#35;', $label ), '/#?');
+    return '<a href="'.$href.'" target="_blank" rel="nofollow">'.$label.'</a>';
 }
 
 
@@ -180,12 +180,63 @@ function twitter_api_relative_date( $strdate ){
 
 
 /**
- * Clean four-byte Emoji icons out of tweet text.
+ * Clean four-byte characters out of tweet text, includes some emoji.
  * MySQL utf8 columns cannot store four byte Unicode sequences
  */
-function twitter_api_strip_emoji( $text ){
+function twitter_api_strip_quadruple_bytes( $text ){
     // four byte utf8: 11110www 10xxxxxx 10yyyyyy 10zzzzzz
     return preg_replace('/[\xF0-\xF7][\x80-\xBF]{3}/', '', $text );
+}
+
+
+
+/**
+ * Replace Emoji characters with embedded images.
+ * Should be run after htmlifying tweet and before stripping quadruple bytes
+ */
+function twitter_api_replace_emoji( $text, $callback = 'twitter_api_replace_emoji_callback' ){
+    return preg_replace_callback('/(?:\xF0\x9F\x87[\xA6-\xBA]\xF0\x9F\x87[\xA6-\xBA]|\xF0\x9F[\x80\x83\x85-\x86\x88-\x89\x8C-\x95\x97-\x9B][\x80-\xBF]|[\xE2-\xE3][\x80\x81\x84\x86\x8A\x8C\x8F\x93\x96-\x9E\xA4\xAC-\xAD][\x80-\x82\x84-\x9D\xA0-\xA6\xA8-\xAC\xB0\xB2-\xB6\xB9-\xBF]|[\x23-\x39]\xE2\x83\xA3)/', $callback, $text );
+}
+
+
+
+/**
+ * Default Emoji replacement callback
+ * @internal
+ */
+function twitter_api_replace_emoji_callback( array $match ){
+    try {
+        if( empty($match[0]) ){
+            return '';
+        }
+        $ref = twitter_api_emoji_ref( $match[0] );
+        if( ! $ref ){
+            return $match[0];
+        }
+        $html  = '<img src="https://abs.twimg.com/emoji/v1/72x72/'.$ref.'.png" style="width:1em;" class="emoji emoji-'.$ref.'" />';
+        return $html;
+    }
+    catch( Exception $e ){
+        WP_DEBUG and trigger_error( $e->getMessage(), E_USER_WARNING );
+        return '';
+    }
+}
+
+
+
+/**
+ * Get a hex name for a single emoji symbol
+ * @param string raw bytes, e.g. "\xF0\x9F\x98\x81"
+ * @return string hex name suitable for creating a class or ID e.g. "1f601" or "1f1ec-1f1e7" for compound symbols
+ */
+function twitter_api_emoji_ref( $raw ){
+    static $emoji;
+    if( ! isset($emoji) ){
+        $emoji = include twitter_api_basedir().'/inc/return-emoji.php';
+    }
+    if( isset($emoji[$raw]) ){
+        return $emoji[$raw];
+    }
 }
 
 

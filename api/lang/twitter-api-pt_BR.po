@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Twitter API plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon, 29 Jul 2013 10:55:29 +0100\n"
-"PO-Revision-Date: Fri, 21 Mar 2014 14:49:33 +0000\n"
+"POT-Creation-Date: 2013-07-29 10:55+0100\n"
+"PO-Revision-Date: 2015-03-15 17:42+0000\n"
 "Last-Translator: Tim Whitlock\n"
 "Language-Team: Wordpress\n"
 "Language: Portuguese (Brazil)\n"
@@ -11,288 +11,152 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Loco https://localise.biz\n"
 "X-Loco-Source-Locale: en_GB\n"
 "X-Loco-Target-Locale: pt_BR\n"
-"X-Loco-Tagged: \n"
-"X-Poedit-SourceCharset: UTF-8"
+"X-Loco-Project-Id: 284\n"
+"X-Loco-Tagged: Twitter API\n"
+"X-Loco-Api-Version: 1.0.9"
 
-#: about-an-hour-ago
+#: ../../api/lib/twitter-api-utils.php:168 loco:5505af2214d725a5068b4569
 msgid "About an hour ago"
 msgid_plural "About %u hours ago"
 msgstr[0] "Cerca de uma hora atrás"
 msgstr[1] "Cerca de %u horas atrás"
 
-#: accepted
-msgid "Accepted"
-msgstr "Aceito"
-
-#: authenticated-as-x
+#: ../../api/lib/twitter-api-admin.php:146 loco:5505af2214d725a5068b457b
 msgid "Authenticated as @%s"
 msgstr "Autenticado como @%s"
 
-#: authorization-required
-msgid "Authorization Required"
-msgstr "Autorização exigida"
+#: ../../latest-tweets.php:322 ../../api/lib/twitter-api-admin.php:90 loco:#: 5505af2214d725a5068b4573
+msgid "Connect to Twitter"
+msgstr ""
 
-#: bad-request
-msgid "Bad Request"
-msgstr "Bad Request"
-
-#: cannot-enable-twitter-api-cache-without-apc-extens
-msgid "Cannot enable Twitter API cache without APC extension"
-msgstr "Não é possível habilitar o cache da API do Twiiter sem APC..."
-
-#: conflict
-msgid "Conflict"
-msgstr "Conflito"
-
-#: continue
-msgid "Continue"
-msgstr "Continuar"
-
-#: created
-msgid "Created"
-msgstr "Criado"
-
-#: expectation-failed
-msgid "Expectation Failed"
-msgstr "Falha na expectativa"
-
-#: forbidden
-msgid "Forbidden"
-msgstr "Proibido"
-
-#: found
-msgid "Found"
-msgstr "Encontrado(a)"
-
-#: gateway-time-out
-msgid "Gateway Time-out"
-msgstr "Timeout no Gateway"
-
-#: gone
-msgid "Gone"
-msgstr "Já era"
-
-#: http-version-not-supported
-msgid "HTTP Version not supported"
-msgstr "Versão HTTP não suportada"
-
-#: invalid-oauth-token
+#: ../../api/lib/twitter-api-core.php:410 loco:5505af2214d725a5068b4582
 msgid "Invalid OAuth token"
 msgstr "Token OAuth inválido"
 
-#: invalid-twitter-parameter
+#: ../../api/lib/twitter-api-core.php:246 loco:5505af2214d725a5068b457e
 msgid "Invalid Twitter parameter"
 msgstr "Parâmetro do Twitter inválido"
 
-#: just-now
+#: ../../api/lib/twitter-api-utils.php:155 loco:5505af2214d725a5068b4585
 msgid "Just now"
 msgstr "Agora mesmo"
 
-#: key-required-even-if-secret-is-empty
+#: ../../api/lib/twitter-api-core.php:410 loco:5505af2214d725a5068b4583
 msgid "Key required even if secret is empty"
 msgstr "Chave exigida mesmo se o secret estiver vazio"
 
-#: latest-tweets
+#: ../../latest-tweets.php:231 ../../latest-tweets.php:241 572 loco:#: 5505af2214d725a5068b4572
 msgid "Latest Tweets"
 msgstr "Últimos Tweets"
 
-#: length-required
-msgid "Length Required"
-msgstr "Comprimento exigido"
-
-#: malformed-response-from-twitter
+#: ../../api/lib/twitter-api-core.php:356 loco:5505af2214d725a5068b4580
 msgid "Malformed response from Twitter"
 msgstr "Resposta \"malformed\" do Twitter"
 
-#: method-not-allowed
-msgid "Method Not Allowed"
-msgstr "Método Não Permitido"
+#: ../../latest-tweets.php:217 loco:5505af2214d725a5068b456f
+msgid "Minimum popularity"
+msgstr ""
 
-#: moved-permanently
-msgid "Moved Permanently"
-msgstr "Movido permanentemente"
-
-#: multiple-choices
-msgid "Multiple Choices"
-msgstr "Múltipla escolha"
-
-#: no-content
-msgid "No Content"
-msgstr "Sem conteúdo"
-
-#: non-authoritative-information
-msgid "Non-Authoritative Information"
-msgstr "Informação não-autoritativa"
-
-#: not-acceptable
-msgid "Not Acceptable"
-msgstr "Não Aceitável"
-
-#: not-found
-msgid "Not Found"
-msgstr "Não Encontrado"
-
-#: not-implemented
-msgid "Not Implemented"
-msgstr "Não Implementado"
-
-#: not-modified
-msgid "Not Modified"
-msgstr "Não modificado"
-
-#: number-of-tweets
+#: ../../latest-tweets.php:212 loco:5505af2214d725a5068b456e
 msgid "Number of tweets"
 msgstr "Número de tweets"
 
-#: ok
-msgid "OK"
-msgstr "OK"
+#: ../api/lib/twitter-api-admin.php:56 loco:5505c1b514d72528128b456a
+msgid "OAuth Access Secret"
+msgstr ""
 
-#: partial-content
-msgid "Partial Content"
-msgstr "Conteúdo parcial"
+#: ../api/lib/twitter-api-admin.php:52 loco:5505c1b514d72528128b4569
+msgid "OAuth Access Token"
+msgstr ""
 
-#: payment-required
-msgid "Payment Required"
-msgstr "Pagamento Exigido"
+#: ../api/lib/twitter-api-admin.php:44 loco:5505c1b514d72528128b4567
+msgid "OAuth Consumer Key"
+msgstr ""
 
-#: plugin-not-yet-authenticated-with-twitter
+#: ../api/lib/twitter-api-admin.php:48 loco:5505c1b514d72528128b4568
+msgid "OAuth Consumer Secret"
+msgstr ""
+
+#: ../../latest-tweets.php:44 loco:5505af2214d725a5068b456b
+msgid "Plugin not fully configured"
+msgstr "Aplicação do Twitter não totalmente configurada"
+
+#: ../../api/lib/twitter-api-admin.php:139 loco:5505af2214d725a5068b457a
 msgid "Plugin not yet authenticated with Twitter"
 msgstr "Plugin ainda não autenticado com o Twitter"
 
-#: precondition-failed
-msgid "Precondition Failed"
-msgstr "Falha na pré-condição"
-
-#: proxy-authentication-required
-msgid "Proxy Authentication Required"
-msgstr "Autenticação Proxy Exigida"
-
-#: request-entity-too-large
-msgid "Request Entity Too Large"
-msgstr "Entidade do request muito grande"
-
-#: request-time-out
-msgid "Request Time-out"
-msgstr "Request Time-out"
-
-#: request-uri-too-large
-msgid "Request-URI Too Large"
-msgstr "URI de Request muito grande"
-
-#: requested-range-not-satisfiable
-msgid "Requested range not satisfiable"
-msgstr "Range solicitado não satisfatório"
-
-#: reset-content
-msgid "Reset Content"
-msgstr "Resetar conteúdo"
-
-#: save-settings
+#: ../../api/lib/twitter-api-admin.php:60 loco:5505af2214d725a5068b4575
 msgid "Save settings"
 msgstr "Salvar"
 
-#: see-other
-msgid "See Other"
-msgstr "Ver outros"
-
-#: show-replies
+#: ../../latest-tweets.php:227 loco:5505af2214d725a5068b4571
 msgid "Show Replies"
 msgstr "Mostrar Replies"
 
-#: show-retweets
+#: ../../latest-tweets.php:222 loco:5505af2214d725a5068b4570
 msgid "Show Retweets"
 msgstr "Mostrar RTs"
 
-#: switching-protocols
-msgid "Switching Protocols"
-msgstr "Trocando protocolos"
+#: ../../api/lib/twitter-api-core.php:532 loco:5505af2214d725a5068b4584
+msgid "Status %u from Twitter"
+msgstr ""
 
-#: temporary-redirect
-msgid "Temporary Redirect"
-msgstr "Redirecionamento Temporário"
-
-#: these-details-are-available-in
+#: ../../api/lib/twitter-api-admin.php:63 loco:5505af2214d725a5068b4576
 msgid "These details are available in"
 msgstr "Detalhes disponíveis em"
 
-#: twitter-api
+#: ../../api/lib/twitter-api-admin.php:189 loco:5505af2214d725a5068b457c
 msgid "Twitter API"
 msgstr "API do Twitter"
 
-#: twitter-api-authentication-settings
+#: ../../api/lib/twitter-api-admin.php:16 loco:5505af2214d725a5068b4574
 msgid "Twitter API Authentication Settings"
 msgstr "Configurações de Autenticação da API do Twitter"
 
-#: twitter-api-rate-limit-exceeded
-msgid "Twitter API rate limit exceeded"
-msgstr "Taxa de limite da API do Twitter excedida"
-
-#: twitter-application-is-not-fully-configured
-msgid "Twitter application is not fully configured"
-msgstr "Aplicação do Twitter não está totalmente configurada"
-
-#: twitter-application-not-fully-configured
+#: ../../api/lib/twitter-api-admin.php:121
+#: ../../api/lib/twitter-api-core.php:145 loco:5505af2214d725a5068b4579
 msgid "Twitter application not fully configured"
 msgstr "Aplicação do Twitter não totalmente configurada"
 
-#: twitter-client-not-authenticated
+#: ../../api/lib/twitter-api-core.php:230 loco:5505af2214d725a5068b457d
 msgid "Twitter client not authenticated"
 msgstr "Cliente do Twitter não autenticado"
 
-#: twitter-error-x
+#: ../../api/lib/twitter-api-core.php:308
+#: ../../api/lib/twitter-api-core.php:320 loco:5505af2214d725a5068b457f
 msgid "Twitter error #%d"
 msgstr "Erro no Twitter #%d"
 
-#: twitter-handle
+#: ../../latest-tweets.php:207 loco:5505af2214d725a5068b456d
 msgid "Twitter handle"
 msgstr "Login no Twitter"
 
-#: twitter-is-not-responding
-msgid "Twitter is not responding"
-msgstr "Twitter não está respondendo"
-
-#: twitter-is-too-busy-to-respond
-msgid "Twitter is too busy to respond"
-msgstr "Twitter muito ocupado para responder"
-
-#: twitter-server-error
-msgid "Twitter server error"
-msgstr "Erro no Servidor do Twitter"
-
-#: unsupported-media-type
-msgid "Unsupported Media Type"
-msgstr "Tipo de mídia não suportado"
-
-#: use-proxy
-msgid "Use Proxy"
-msgstr "Usar Proxy"
-
-#: widget-title
+#: ../../latest-tweets.php:202 loco:5505af2214d725a5068b456c
 msgid "Widget title"
 msgstr "Título do Widget"
 
-#: wordpress-http-request-failure
+#: ../../api/lib/twitter-api-core.php:375 loco:5505af2214d725a5068b4581
 msgid "Wordpress HTTP request failure"
 msgstr "Falha no HTTP request do Wordpress"
 
-#: x-minute-ago
+#: ../../api/lib/twitter-api-utils.php:160 loco:5505af2214d725a5068b4567
 msgid "%u minute ago"
 msgid_plural "%u minutes ago"
 msgstr[0] "1 minuto atrás"
 msgstr[1] "%u minutos atrás"
 
-#: yesterday-at
+#: ../../api/lib/twitter-api-utils.php:173 loco:5505af2214d725a5068b4586
 msgid "Yesterday at"
 msgstr "Ontem às"
 
-#: you-dont-have-permission-to-manage-twitter-api-set
+#: ../../api/lib/twitter-api-admin.php:102 loco:5505af2214d725a5068b4578
 msgid "You don't have permission to manage Twitter API settings"
 msgstr "Você não tem permissão para gerenciar a API do Twitter"
 
-#: your-twitter-dashboard
+#: ../../api/lib/twitter-api-admin.php:64 loco:5505af2214d725a5068b4577
 msgid "your Twitter dashboard"
 msgstr "seu painel do Twitter"

@@ -1,14 +1,14 @@
-# Twitter API Wordpress Library
+# Twitter API WordPress Library
 
-This library exposes a fully authenticated Twitter API client for developing Wordpress plugins.
+This library exposes a fully authenticated Twitter API client for developing WordPress plugins.
 
 ## Features
 
 * Compatible with the new Twitter API 1.1
-* OAuth flow connects your Twitter account via Wordpress admin
+* OAuth flow connects your Twitter account via WordPress admin
 * Access to a common Twitter API client that any plugin can use
 * Caching of API responses
-* Light-weight: uses Wordpress utilities where possible
+* Light-weight: uses WordPress utilities where possible
  
 
 ## Example plugin 
@@ -31,7 +31,7 @@ To expose the library and its admin functions, bootstrap the library from your o
 if( ! function_exists('twitter_api_get') ){
     require dirname(__FILE__).'/api/twitter-api.php';
 }
-```   
+```
 
 ## Authentication
 
@@ -39,14 +39,21 @@ Once the plugin is installed and enabled, you can bind it to a Twitter account a
 
 * Register a Twitter application at https://dev.twitter.com/apps
 * Note the Consumer key and Consumer secret under *OAuth settings*
-* Log into Wordpress admin and go to *Settings > Twitter API*
+* Log into WordPress admin and go to *Settings > Twitter API*
 * Enter the consumer key and secret and click 'Save settings'
 * Click the 'Connect to Twitter' button and follow the prompts.
 
-Any Wordpress plugin can now make fully authenticated calls to the Twitter API. The functions are documented below.
+Any WordPress plugin can now make fully authenticated calls to the Twitter API. The functions are documented below.
 
 
 ## Twitter Client
+
+To check whether the user has authenticated the plugin and configured the oAuth tokens you can use the following function.
+
+#### twitter_api_configured
+`bool twitter_api_configured ()`
+Returns True if the user has authenticated the plugin and configured oAuth tokens
+
 
 The following functions are available from anywhere as soon as the plugin is authenticated.
 They all operate as the Twitter account you connected in your admin area.
@@ -93,12 +100,14 @@ Exhanges a verified request token for an access token: e.g. `{ key: 'your access
 Once you have your own authentication credentials you can work directly with the API client.
 This example shows the main methods you might use:
 
-```php    
+```php
     try {
-       $Client = twitter_api_client('some client');
-       $Client->set_oauth( 'my consumer key', 'my consumer secret', 'their access key', 'their access secret' );
-       $user = $Client->call( 'users/show', array( 'screen_name' => 'timwhitlock' ), 'GET' );
-       var_dump( $user );
+        if ( twitter_api_configured() ) {
+            $Client = twitter_api_client('some client');
+            $Client->set_oauth( 'my consumer key', 'my consumer secret', 'their access key', 'their access secret' );
+            $user = $Client->call( 'users/show', array( 'screen_name' => 'timwhitlock' ), 'GET' );
+            var_dump( $user );
+        }
     }
     catch( TwitterApiRateLimitException $Ex ){
         $info = $Client->last_rate_limit();
